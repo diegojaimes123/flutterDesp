@@ -492,7 +492,7 @@ class _ReservationCardState extends State<ReservationCard> {
                                                     .text.isNotEmpty &&
                                                 fechaSalidaController
                                                     .text.isNotEmpty &&
-                                                total.text != "0") {
+                                                total.text != "0" && int.parse(total.text) <= widget.sitio.numHuespedes) {
                                               // Modal para confirmar la reserva
                                               showConfirmarReserva(
                                                   context,
