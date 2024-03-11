@@ -1853,85 +1853,88 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      Expanded(
-        flex: 6, //tamaño de la vista
-        child: PageView.builder(
-            controller: controller,
-            itemCount: listaVistas.length, //recorre la longitud de la lista
-            onPageChanged: (int index) {
-              //condicional para el aumento del porcentaje del progreso en el circulo
-              if (index >= currentIndex) {
-                setState(() {
-                  currentIndex = index;
-                  porcentaje += 0.20;
-                });
-              } else {
-                setState(() {
-                  currentIndex = index;
-                  porcentaje -= 0.20;
-                });
-              }
-            },
-            itemBuilder: (context, index) {
-              return Container(
-                child: listaVistas[index].vista1, //Llmado de las vistas
-              );
-            }),
-      ),
-      //Aqui va el boton
-      Expanded(
+    return Column(
+      children: [
+        Expanded(
+          flex: 6, //tamaño de la vista
+          child: PageView.builder(
+              controller: controller,
+              itemCount: listaVistas.length, //recorre la longitud de la lista
+              onPageChanged: (int index) {
+                //condicional para el aumento del porcentaje del progreso en el circulo
+                if (index >= currentIndex) {
+                  setState(() {
+                    currentIndex = index;
+                    porcentaje += 0.20;
+                  });
+                } else {
+                  setState(() {
+                    currentIndex = index;
+                    porcentaje -= 0.20;
+                  });
+                }
+              },
+              itemBuilder: (context, index) {
+                return Container(
+                  child: listaVistas[index].vista1, //Llmado de las vistas
+                );
+              }),
+        ),
+        //Aqui va el boton
+        Expanded(
           flex: 1,
           child: CupertinoButton(
-              padding: EdgeInsets.zero,
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  SizedBox(
-                    height: 55,
-                    width: 55,
-                    child: CircularProgressIndicator(
-                      value: porcentaje,
-                      backgroundColor: Colors.grey,
-                      valueColor:
-                          AlwaysStoppedAnimation<Color>(porcentaje <= 0.20
-                              ? Colors.yellow
-                              : porcentaje <= 0.60
-                                  ? Colors.lightGreen
-                                  : porcentaje > 0.60
-                                      ? Colors.green
-                                      : Colors.white),
-                      //Aqui evalua el color del boton dependiendo el porcentaje
-                    ),
+            padding: EdgeInsets.zero,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                SizedBox(
+                  height: 55,
+                  width: 55,
+                  child: CircularProgressIndicator(
+                    value: porcentaje,
+                    backgroundColor: Colors.grey,
+                    valueColor: AlwaysStoppedAnimation<Color>(porcentaje <= 0.20
+                        ? Colors.yellow
+                        : porcentaje <= 0.60
+                            ? Colors.lightGreen
+                            : porcentaje > 0.60
+                                ? Colors.green
+                                : Colors.white),
+                    //Aqui evalua el color del boton dependiendo el porcentaje
                   ),
-                  CircleAvatar(
-                    backgroundColor:
-                        validacionColor ? Colors.white : Colors.green,
-                    child: const Icon(
-                      Icons.arrow_forward_ios_outlined,
-                      color: Colors.black,
-                    ),
+                ),
+                CircleAvatar(
+                  backgroundColor:
+                      validacionColor ? Colors.white : Colors.green,
+                  child: const Icon(
+                    Icons.arrow_forward_ios_outlined,
+                    color: Colors.black,
                   ),
-                ],
-              ),
-              onPressed: () {
-                if (formKey.currentState!.validate()) {
-                  //condicional que evalua los textfield si esta correcto puede avanzar a la siguiente pagina
-                  if (currentIndex == listaVistas.length - 1) {
-                    //condiiconal de las vistas
-                    validacionColor; //color
-                    if (porcentaje == 1) {
-                      //condicional que cuando llegue a 1 podra avanzar a la función de registro
-                      signIn();
-                    }
+                ),
+              ],
+            ),
+            onPressed: () {
+              if (formKey.currentState!.validate()) {
+                //condicional que evalua los textfield si esta correcto puede avanzar a la siguiente pagina
+                if (currentIndex == listaVistas.length - 1) {
+                  //condiiconal de las vistas
+                  validacionColor; //color
+                  if (porcentaje == 1) {
+                    //condicional que cuando llegue a 1 podra avanzar a la función de registro
+                    signIn();
                   }
-                  //animacion al pasar la pagina
-                  controller!.nextPage(
-                      duration: const Duration(milliseconds: 500),
-                      curve: Curves.easeInOut);
                 }
-              }))
-    ]);
+                //animacion al pasar la pagina
+                controller!.nextPage(
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.easeInOut);
+              }
+            },
+          ),
+        ),
+      ],
+    );
   }
 
   //Lista dentro de la funcion void
@@ -1940,70 +1943,101 @@ class _RegisterState extends State<Register> {
       //Primera vista
       Vistas(
         vista1: Form(
-            key: formKey, //Variable para la validacion del formulario
-            //Lo hice en una clase diferente
-            child: Row(
-              children: [
-                Expanded(
-                  child: Prueba2(
-                      //Paso de parametros
-                      nombreCompleto: _nombreCompletoController,
-                      tipoDocumento: _tipoDocumentoController,
-                      numeroDocumento: _numeroDocumentoController),
+          key: formKey, //Variable para la validacion del formulario
+          //Lo hice en una clase diferente
+          child: Row(
+            children: [
+              Expanded(
+                child: Prueba2(
+                  //Paso de parametros
+                  nombreCompleto: _nombreCompletoController,
+                  tipoDocumento: _tipoDocumentoController,
+                  numeroDocumento: _numeroDocumentoController,
                 ),
-              ],
-            )),
+              ),
+            ],
+          ),
+        ),
       ),
       //segunda vista
       Vistas(
-          vista1: Form(
-        key: formKey,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          //crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Expanded(
-              child: Prueba(
-                descripcion: _descripcionController,
-                telefono: _telefonoController,
-                idioma: _idiomaController,
-              ),
-            )
-          ],
+        vista1: Form(
+          key: formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            //crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Expanded(
+                child: Prueba(
+                  descripcion: _descripcionController,
+                  telefono: _telefonoController,
+                  idioma: _idiomaController,
+                ),
+              )
+            ],
+          ),
         ),
-      )),
+      ),
       //Tercera vista
       Vistas(
         vista1: Form(
-            key: formKey,
-            child: Expanded(
-              child: Prueba3(
+          key: formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            //crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Expanded(
+                child: Prueba3(
                   tipoBanco: _tipoBancoController,
                   cuentaBancaria: _cuentaBancariaController,
-                  numeroDaviplata: _numeroDaviplataController),
-            )),
+                  numeroDaviplata: _numeroDaviplataController,
+                ),
+              )
+            ],
+          ),
+        ),
       ),
       //Cuarta vista
       Vistas(
-          vista1: Form(
-        key: formKey,
-        child: Expanded(
-          child: Prueba5(
-              celularController: _celularController,
-              imagenController: _imagenController),
+        vista1: Form(
+          key: formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            //crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Expanded(
+                child: Prueba5(
+                  celularController: _celularController,
+                  imagenController: _imagenController,
+                ),
+              )
+            ],
+          ),
         ),
-      )),
+      ),
       //Quinta Vista
       Vistas(
-          vista1: Form(
-        key: formKey,
-        child: Expanded(
-            child: Prueba4(
-                email: _emailController,
-                contrasenha: _contrasenhaController,
-                confirmacionContasenha: _confirmacionContasenhaController)),
-      )),
+        vista1: Form(
+          key: formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            //crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Expanded(
+                child: Prueba4(
+                  email: _emailController,
+                  contrasenha: _contrasenhaController,
+                  confirmacionContasenha: _confirmacionContasenhaController,
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
     ];
     setState(() {
       listaVistas = lista;
