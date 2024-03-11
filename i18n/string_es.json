@@ -1,0 +1,885 @@
+{
+    "buscador": {
+        "Searchbyregion": "Región",
+        "SouthAmerica":"AMÉRICA DEL SUR",
+        "NorthAmerica":"AMÉRICA DEL NORTE",
+        "CentralAmerica":"CENTROAMÉRICA",
+        "Europe":"EUROPA",
+        "Asia":"ASIA",
+        "Africa":"ÁFRICA",
+        "Oceania": "OCEANIA",
+        "Step" :{
+            "Date":"Fechas",
+            "ArrivalDate": "Fecha de llegada",
+            "DepartureDate": "Fecha de salida"
+        },
+        "Step2":{
+            "NumberOfGuests": "Huéspedes",
+            "EnterNumberOfGuests": "Ingrese el número de huéspedes",
+            "LookFor": "Buscar",
+            "Following":"Siguiente",
+            "Back": "Atrás"
+        },
+        "card":{
+            "adults": "Adultos",
+            "age":"Edad de 13 años o más",
+            "children": "Niños",
+            "from2":"De 2 a 12 años",
+            "babys":"Bebes",
+            "less":"Menos de 12 años",
+            "Pets":"Mascotas",
+            "save": "Guardar"
+        }
+    },
+
+    "categories":{
+        "questionCategorie": "¿Quiere eliminar esta categoría?",
+        "questionCategorie2": "Si elimina esta categoría no hay marcha atras. ¿Esta seguro de hacer esta operación?",
+        "cancel":"Cancelar",
+        "delete":"Eliminar",
+        "categories": "Categorías",
+        "addCategory":"Añadir Categoría",
+        "login": "Iniciar Sesión"
+    },
+
+    "From":{
+        "category": "Categoría",
+        "required": "Se requiere este campo",
+        "loading": "Cargando",
+        "notIcon": "No se ha seleccionado ningún icono",
+        "summery":"Cuando seleccione un icono, por favor, espere un momento mientras se carga en nuestro servidor.",
+        "save": "Guardar",
+        "summery2": "Cuando seleccione una imagen, por favor, espere un momento mientras se carga en nuestro servidor. Después de la carga exitosa, haga clic en el botón Guardar ubicado al final del formulario para efectuar los cambios."
+                                         
+    },
+    "chat": {
+        "write":"Escribir mensaje",
+        "administrators":"Administradores",
+        "hosts":"Anfitriones",
+        "myGuests":"Mis huéspedes",
+        "users":"Usuarios"
+    },
+
+    "comments": {
+        "site": "Sitio",
+        "cleaning": "Limpieza",
+        "communication": "Comunicación",
+        "arrival": "Llegada",
+        "reliability": "Fiabilidad",
+        "location": "Ubicación",
+        "price": "Precio",
+        "comment": "Comentario",
+        "question" : {
+            "question1": "¿Quiere eliminar este comentario?",
+            "question2": "Si elimina este comentario no hay marcha atrás. ¿Está seguro de hacer esta operación?."
+            
+        },
+        "editComment": {
+            "one": {
+                "question1":"¿Qué tal estuvo la limpieza del lugar?",
+                "question2": "¿Tuviste algún problema?",
+                "comment": "Cuéntanos tu problema"
+            },
+            "eleccion": {
+                "veryBad": "Muy Mala",
+                "bad": "Mala",
+                "basic": "Básica",
+                "good":"Buena",
+                "Excellent": "Excelente"
+            },
+            "two": {
+                "question1": "¿Como estuvo tu comunicación con el anfitrión del lugar?"
+            },
+            "three": {
+                "question1": "¿Califica tu llegada al lugar?",
+                "question2": "¿Qué te sucedió? ¡cuéntanos!"
+            },
+            "four": {
+                "question1": "¿Cumplía con tus expectativas?",
+                "question2": "¿Por qué no cumplió con tus expectativas?"
+            },
+            "five": {
+                "question1": "¿cuéntanos sobre la ubicación del lugar? \n ¿Te gusto?",
+                "question2": "¿Qué te disgusto? ¡cuéntanos!"
+            },
+            "six": {
+                "question1": "¿Qué tal el precio?",
+                "question2": "¿No se adapta al lugar?"
+            },
+            "seven": {
+                "comment": "Comenta sobre nuestro lugar, recuerda que tu opinión es muy valiosa para nosotros.",
+                "comment2": "Deja tu comentario"
+            },
+            "boton": "Editar Comentario"
+        },
+        "commentPage": {
+            "comments": "Comentarios",
+            "myComments": "Mis comentarios",
+            "comments2": "Comentarios en mis sitios",
+            "allComments": "Todos los comentarios"
+        }
+    },
+    "reserva":{
+        "payments": "Pagos Recibidos",
+        "site": "Sitio",
+        "user": "Usuario",
+        "payDay": "Fecha Pago",
+        "State": "Estado",
+        "see": "Ver",
+        "summery" : {
+            "text1": "Recibiste un pago por una reserva con la siguiente información: \n",
+            "nameSite": "Nombre del sitio: {{name}}\n",
+            "location": "Ubicación: {{name}}\n",
+            "checkInDate": "Fecha de entrada: {{name}}\n",
+            "checkOut": "Fecha de salida: {{name}}",
+            "paymentMethod": "Medios de pago: {{name}}\n",
+            "paymentDate": "Fecha de pago: {{name}}\n",
+            "total": "Número total de huéspedes: {{name}}",
+            "totalPrice": "Precio total de la estancia: {{name}}"
+        },
+        "fullname": "Nombre Completo",
+        "paymentDate": "Fecha de pago",
+        "dateOfFiling": "Fecha del radicado",
+        "paymentMethod": "Medio de Pago",
+        "paymentStatus": "Estado de pago",
+        "entryDate": "Fecha de entrada",
+        "departureeDate": "Fecha de salida",
+        "NumberOfGuests":"Número de huéspedes",
+        "NumberOfBabys": "Número de Bebes",
+        "NumberOfPets":"Número de Mascotas",
+        "ReserveValue": "Valor Reserva",
+        "ValueGain": "Valor Ganancia",
+        "valueToReturn": "Valor a devolver",
+        "cerrar": "Cerrar",
+        "reserva_activa": {
+            "title": "Reservas activas de mis sitios",
+            "date": "Fecha",
+            "fechaReserva": "Fecha reserva",
+            "numeroAdultos": "Número de adultos",
+            "numeroNinhos": "Número de niños",
+            "fechallegada": "fecha de llegada"
+        },
+        "reserva_cancelada": {
+            "title": "Reservas canceladas de mis sitios"
+        },
+        "reserva_finalizada": {
+            "title": "Reservas finalizadas de mis sitios"
+        }
+    },
+
+    "mySites":{
+        "title2": "Todos los sitios",
+        "title": "Mis sitios",
+        "categoria": "Categoría {{name}}",
+        "huespedes": "Huéspedes {{name}}",
+        "noche": "{{name}} noche",
+        "question": {
+            "one": "¿Hay reservas activas de este sitio?",
+            "contenedor": "Existen reservas activas vinculadas a este sitio; será necesario esperar a que estas finalicen o se cancelen."
+        },
+        "question2":{
+            "one": "¿Quiere realizar esta acción?",
+            "contenedor": "Para llevar a cabo esta acción, es necesario iniciar sesión primero."
+        },
+        "question3": {
+            "one": "¿Quiere eliminar este sitio?",
+            "contenedor": "Si elimina este sitio no hay marcha atrás. ¿Está seguro de hacer esta operación?"
+        },
+        
+        "accept": "Aceptar"
+    },
+
+    "reservas_todo": {
+        "reservas_canceladas": {
+            "title": "Todas las reservas canceladas",
+            "summery" : {
+                "text1": "Usted tiene una reserva cancelada con la siguiente información: \n",
+                "nameSite": "Nombre del sitio: {{name}}\n",
+                "location": "Ubicación: {{name}}\n",
+                "checkInDate": "Fecha de entrada: {{name}}\n",
+                "checkOut": "Fecha de salida: {{name}}",
+                "paymentMethod": "Medios de pago: {{name}}\n",
+                "paymentDate": "Fecha de pago: {{name}}\n",
+                "total": "Número total de huéspedes:  {{name}}",
+                "totalPrice": "Precio total de la estancia: {{name}}"
+            }
+        },
+        "totalDevoluciones": {
+            "title": "Devolución de Reservaciones",
+            "upload_status": "Actualizar Estado",
+            "summery" : {
+                "text1": "Usted tiene una devolución de una reserva con la siguiente información: \n",
+                "nameSite": "Nombre del sitio: {{name}}\n",
+                "location": "Ubicación: {{name}}\n",
+                "filingDate": "Fecha de radicado: {{name}}\n",
+                "checkInDate": "Fecha de entrada: {{name}}\n",
+                "checkOut": "Fecha de salida: {{name}}",
+                "paymentMethod": "Medios de pago: {{name}}\n",
+                "paymentDate": "Fecha de pago: {{name}}\n",
+                "total": "Número total de huéspedes:  {{name}}",
+                "totalPrice": "Precio total de la estancia: {{name}}"
+            }
+        },
+
+        "multas": {
+            "fines": "Multas",
+            "booking": "Reserva",
+            "value": "Valor",
+            "summery" : {
+                "text1": "Usted tiene una multa de una reserva con la siguiente información: \n",
+                "nameSite": "Nombre del sitio: {{name}}\n",
+                "location": "Ubicación: {{name}}\n",
+                "filingDate": "Fecha de radicado: {{name}}\n",
+                "checkInDate": "Fecha de entrada: {{name}}\n",
+                "checkOut": "Fecha de salida: {{name}}",
+                "paymentMethod": "Medios de pago: {{name}}\n",
+                "paymentDate": "Fecha de pago: {{name}}\n",
+                "bookingValue": "Valor de la reserva: {{name}}",
+                "fineValue":"Valor de la multa: {{name}}",
+                "returnValue": "Valor a devolver: {{name}}",
+                "total": "Número total de huéspedes:  {{name}}",
+                "totalPrice": "Precio total de la estancia: {{name}}"
+            },
+            "fineValue": "Valor de la multa",
+            "returnValue":"Valor a devolver"
+        },
+
+        "totalPagosAnf":{
+            "title": "Todos los pagos hechos a los anfitriones"
+        },
+
+        "pagosTotalAnf": {
+            "title": "Todos los pagos a anfitriones"
+        },
+        "usuarioTotalPago": {
+            "title": "Pagos de Reservaciones",
+            "summery" : {
+                "text1": "Usted hizo un pago de una reserva con la siguiente información: \n",
+                "nameSite": "Nombre del sitio: {{name}}\n",
+                "location": "Ubicación: {{name}}\n",
+                "filingDate": "Fecha de radicado: {{name}}\n",
+                "checkInDate": "Fecha de entrada: {{name}}\n",
+                "checkOut": "Fecha de salida: {{name}}",
+                "paymentMethod": "Medios de pago: {{name}}\n",
+                "paymentDate": "Fecha de pago: {{name}}\n",
+                "total": "Número total de huéspedes:  {{name}}",
+                "totalPrice": "Precio total de la estancia: {{name}}"
+            }
+        },
+
+        "cancelacionReserva":{
+            "question1": "¿Quiere cancelar esta reserva?",
+            "summery": "Si decide cancelar esta reserva, es posible que se aplique una multa si la cancelación se realiza después de 48 horas. ¿Está seguro de hacer esta operación?"
+        },
+
+        "confirmacionPago2": {
+            "title": "Información de la reservación",
+            "summery1": "A continuación, observa la información del sitio al cual usted está ordenando antes de hacer el pago.",
+            "siteName": "Nombre del sitio",
+            "location": "Ubicación",
+            "guest": "{{name}} huésped",
+            "totalCost": "Costo total",
+            "qrCode": "Código QR",
+            "summery2": "En este momento, su reserva se encuentra en estado pendiente. Si desea que se active, por favor, realice el pago a través del código QR anterior en un lapso de 48 horas. Después de esto, cuando su reserva se active, aparecerá el contacto del anfitrión en nuestro chat en línea para ultimar detalles y asegurarse de que pueda disfrutar su estadía."
+        },
+
+        "misMultas": {
+            "title": "Mis multas",
+            "summery" : {
+                "text1": "Usted tiene una multa con la siguiente información: \n",
+                "nameSite": "Nombre del sitio: {{name}}\n",
+                "location": "Ubicación: {{name}}\n",
+                "checkInDate": "Fecha de entrada: {{name}}\n",
+                "checkOut": "Fecha de salida: {{name}}",
+                "bookingValue": "Valor de la reserva: {{name}}",
+                "fineValue":"Valor de la multa: {{name}}",
+                "returnValue": "Valor a devolver: {{name}}"
+            }
+        },
+
+        "misDevoluciones": {
+            "title": "Mis Devoluciones"
+        },
+
+        "misPagos": {
+            "title": "Mis pagos"
+        },
+
+        "misReservasActivas":{
+            "title": "Mis reservas activas",
+            "title2": "Todas las reservas activas",
+            "summery" : {
+                "text1": "Usted tiene una reserva activa con la siguiente información: \n",
+                "nameSite": "Nombre del sitio: {{name}}\n",
+                "location": "Ubicación: {{name}}\n",
+                "checkInDate": "Fecha de entrada: {{name}}\n",
+                "checkOut": "Fecha de salida: {{name}}",
+                "total": "Número total de huéspedes:  {{name}}",
+                "totalPrice": "Precio total de la estancia: {{name}}"
+            }
+        },
+
+        "actualizacionDevoluciones": {
+            "title": "Actualización de las Devoluciones",
+            "status": "Estado: ",
+            "cancel": "Cancelar",
+            "save": "Guardar"
+        },
+
+        "actualizacionPago": {
+            "title": "Actualización pago de Anfitriones"
+        },
+
+        "reservas_finalizadas": {
+            "title": "Todas las reservas finalizadas",
+            "summery" : {
+                "text1": "Usted tiene una reserva finalizada con la siguiente información: \n",
+                "nameSite": "Nombre del sitio: {{name}}\n",
+                "location": "Ubicación: {{name}}\n",
+                "checkInDate": "Fecha de entrada: {{name}}\n",
+                "checkOut": "Fecha de salida: {{name}}",
+                "total": "Número total de huéspedes:  {{name}}",
+                "totalPrice": "Precio total de la estancia: {{name}}"
+            }
+        },
+
+        "reservas_pendientes": {
+            "title": "Todas las reservas pendientes",
+            "activate": "Activar",
+            "delete": "Eliminar",
+            "summery" : {
+                "text1": "Usted tiene una reserva pendiente con la siguiente información: \n",
+                "nameSite": "Nombre del sitio: {{name}}\n",
+                "location": "Ubicación: {{name}}\n",
+                "checkInDate": "Fecha de entrada: {{name}}\n",
+                "checkOut": "Fecha de salida: {{name}}",
+                "total": "Número total de huéspedes:  {{name}}",
+                "totalPrice": "Precio total de la estancia: {{name}}"
+            }
+        },
+
+        "questions": {
+            "one": "¿Quiere eliminar esta reserva?",
+            "comment": "Si elimina esta reserva no hay marcha atrás. ¿Está seguro de hacer esta operación?"
+        },
+
+        "misReservasCanceladas": {
+            "title": "Mis reservas canceladas",
+            "summery" : {
+                "text1": "Usted tiene una reserva cancelada con la siguiente información: \n",
+                "nameSite": "Nombre del sitio: {{name}}\n",
+                "location": "Ubicación: {{name}}\n",
+                "checkInDate": "Fecha de entrada: {{name}}\n",
+                "checkOut": "Fecha de salida: {{name}}",
+                "total": "Número total de huéspedes:  {{name}}",
+                "totalPrice": "Precio total de la estancia: {{name}}"
+            }
+        },
+
+        "misReservasFinalizadas": {
+            "title": "Mis reservas finalizadas",
+            "summery" : {
+                "text1": "Usted tiene una reserva finalizada con la siguiente información: \n",
+                "nameSite": "Nombre del sitio: {{name}}\n",
+                "location": "Ubicación: {{name}}\n",
+                "checkInDate": "Fecha de entrada: {{name}}\n",
+                "checkOut": "Fecha de salida: {{name}}",
+                "total": "Número total de huéspedes:  {{name}}",
+                "totalPrice": "Precio total de la estancia: {{name}}"
+            }
+        },
+
+        "misReservasPendientes": {
+            "title": "Mis reservas pendientes",
+            "summery" : {
+                "text1": "Usted tiene una reserva pendiente con la siguiente información: \n",
+                "nameSite": "Nombre del sitio: {{name}}\n",
+                "location": "Ubicación: {{name}}\n",
+                "checkInDate": "Fecha de entrada: {{name}}\n",
+                "checkOut": "Fecha de salida: {{name}}",
+                "total": "Número total de huéspedes:  {{name}}",
+                "totalPrice": "Precio total de la estancia: {{name}}"
+            },
+            "pay": "Pagar",
+            "delete": "Eliminar"
+        }
+    },
+
+    "otros": {
+        "cards": {
+            "title": "Panel Usuario",
+            "misReservas": "Mis reservas",
+            "reservasActivas": "Reservas activas",
+            "reservasCancelas": "Reservas canceladas",
+            "reservasFinalizadas": "Reservas finalizadas",
+            "total": "Total"
+        },
+
+        "favorite": {
+            "title": "Sitios favoritos"
+        }
+    },
+
+    "sitioVisitado": {
+        "title": "Sitios visitados"
+    },
+
+    "dScreen": {
+        "pAnfitrion": "Panel anfitrión",
+        "pAdmin": "Panel Administrador"
+    },
+
+    "dashboard": {
+        "inicio": "Inicio",
+        "perfil": "Actualizar Datos",
+        "categorias": "Categorías",
+        "comentario": "Comentarios",
+        "chats": "Mis Chats",
+        "sitio": "Nuevo Sitio",
+        "claro": "Modo Claro",
+        "oscuro": "Modo Oscuro",
+        "sesion": "Cerrar Sesión"
+    },
+
+
+    "habitacionDetails": {
+        "title": "¿Dónde vas a dormir?"
+    },
+
+    "complementos": {
+        "share": "Compartir",
+        "favorites": "Favoritos",
+        "question": {
+            "one": "¿Quiere realizar esta acción?",
+            "summery": "Para llevar a cabo esta acción, es necesario iniciar sesión primero."
+        },
+        "question2": {
+            "one": "¿Quieres compartir información acerca del sitio?",
+            "summery": "A continuación puedes digitar el número de WhatsApp de la persona a la cual usted desea compartir la información del sito."
+        },
+
+        "telefono": "Ingrese el número de telefono",
+        "required": "Se requiere de este campo",
+        "summery": {
+            "one" : "El sitio se llama {{name}}\n",
+            "two":  "tiene una excelente ubicación en {{name}} \n",
+            "three": "tiene una capacidad de {{name}} ",
+            "four": "huéspedes y su precio es muy accesible con un costo de {{name}} la noche. ¡Que esperas para reservarlo!"
+        },
+        "send": "Enviar",
+        "seeAllPhotos": "Ver todas las fotos",
+        "goTo":"A dónde irás",
+        "searchLocation" : "Buscar Ubicación",
+        "location": "Ubicación",
+        "home": "Inicio",
+        "night": "Noche",
+        "arrive": "Llegada",
+        "exit": "Salida",
+        "clearnCOst": "Tarifa de limpieza",
+        "payAndConfirm" : "Confirma y paga",
+        "info": "Información de tu viaje",
+        "yourTotal": "Tu total",
+        "confirm": "Confirmar pago",
+        "totalCOP": "Total (COP)",
+        "guest": "Huéspedes"
+    },
+
+    "serviciosDetails": {
+        "summery": "Mostrar los {{name}} servicios",
+        "ofrece": "Lo que este lugar ofrece"
+    },
+
+    "showHuesped": {
+        "adults": "Adultos",
+        "age": "Edad 13 años o más",
+        "children": "Niños",
+        "from": "De 2 a 12 años",
+        "babys": "Bebes",
+        "less": "Menos de 12 años",
+        "pets": "Mascotas",
+        "save": "Guardar"
+    },
+
+    "inferiorDetails": {
+        "rules": "Reglas de la casa",
+        "securityAndPrivacy": "Seguridad y privacidad",
+        "polices": "Políticas de cancelación",
+        "reglasSitio": "Reglas del sitio",
+        "seguridad": "Seguridad y propiedad del sitio",
+        "cancelacion": "Cancelación gratuita por 48 horas"
+    },
+
+    "servicios": {
+        "wifi": "Wifi",
+        "piscina": "Piscina",
+        "kitchen": {
+          "title": "Cocina",
+          "text": "Los huespedes pueden cocinar en este espacio"
+        },
+        "jacuzzi": "Un jacuzzi",
+        "bodySoap": "Jabon corporal",
+        "shampoo": "Shampoo",
+        "shocked_Refrigerator": "Nevera surtida",
+        "assorted_Minibar": "Minibar surtido",
+        "microwave": "Microondas",
+        "grill": "Parrilla",
+        "coffee_Maker": "Cafetera",
+        "autonomous_Entry": "Entrada Autónoma",
+        "hot_Water": "Agua Caliente",
+        "air_conditioning": "Aire Acondicionado",
+        "washer_Dryer": "Lavadora secadora",
+        "television_or_cable": "Televisión o cable",
+        "chimney": "Chimenea",
+        "parking_lot": "Estacionamiento",
+        "good_lighting": "Buena iluminacion",
+        "otro": {
+            "area_to_work": "Area para trabajar",
+            "text": "En un area compartido"
+        },
+        "office_supplies": "Articulos de oficina",
+        "security_cameras": "Cámaras de seguridad en la propiedad",
+        "luggage_storage": "Se permite dejar el equipaje",
+        "towel_per_guest": "Toalla por huésped",
+        "pillow_per_guest": "Una almohada por huésped",
+        "bed_sheets": "Sabanas para cada cama",
+        "cleaning_products": "Productos de limpieza",
+        "bedding": "Ropa de cama",
+        "equipped_kitchen": "Cocina equipada",
+        "hair_dryer": "Secador de pelo",
+        "iron_and_board": "Plancha con tabla",
+        "smoke_detector": "Detector de humo",
+        "carbon_monoxide_detector": "Detector de monóxido de carbono",
+        "fire_extinguisher": "Extintor de incendios",
+        "first_aid_kit": "Botiquin primeros auxilios",
+        "child_seat": "Asiento para niños",
+        "board_games": "Juegos de mesa",
+        "free_bicycles": "Bicicletas gratuitas",
+        "gym": "Gimnasio",
+        "sauna": "Sauna",
+        "patio_or_terrace": "Patio o terraza",
+        "daily_cleaning_service": "Servicio de limpieza diario",
+        "lake_view": "Vista al lago",
+        "ocean_view": "Vista al mar",
+        "safe_box": "Caja de seguridad",
+        "concierge_service": "Servicio de consejeria",
+        "two": {
+          "pets_allowed": "Mascotas permitidas",
+          "no_assistance_animal_restrictions": "No hay restricciones respecto los animales de asistencia"
+        },
+        "car_rental": "Alquiler de coches",
+        "local_tour_guide": "Guia turistica/local",
+        "babysitting_service": "Servicio de niñera",
+        "musical_instruments": "Instrumentos musicales",
+        "customized_tours": "Tours personalizados",
+        "three": {
+          "private_garden": "Jardin privado",
+          "open_space": "Un espacio abierto en la propiedad generalmente cubierto de pasto"
+        },
+        "crib": "Cuna",
+        "catering_services": "Servicios de catering",
+        "sound_system": "Sistema de sonido",
+        "streaming_service": "Servicio de streaming",
+        "welcome_kit": "Kit de bienvenida",
+        "boat_service": "Servicio de barco",
+        "restaurant_discounts": "Descuentos en restaurantes"
+      },
+
+    "from_habitacion": {
+        "title": "Titúlo",
+        "required": "Se requiere de este campo",
+        "description": "Descripción",
+        "add": "Agregar habitación",
+        "save": "Guardar habitaciones"
+    },
+
+    "serviciosScreen": {
+        "select": "Selecciona tus servicios",
+        "description": "A continuación, usted encontrará varios servicios. Seleccione aquellos que ofrece su propiedad. En la parte inferior de este listado, encontrará un botón en el cual usted guardará en nuestro servidor los servicios seleccionados.",
+        "save": "Guardar servicios"
+    },
+
+    "formularioSitio": {
+      "save": "Guardar",
+      "Continue": "Continuar",
+      "loading": "Cargando"
+    },
+
+    "pantallaUno": {
+        "Agrega_tu_Sitio": "Agrega tu Sitio",
+        "Categoria": "Categoría",
+        "Titulo_del_sitio": "Título del sitio",
+        "Se_requiere_de_este_campo": "Se requiere de este campo",
+        "Numero_de_Huespedes": "Número de huéspedes",
+        "Numero_de_Camas": "Número de camas",
+        "Numero_de_Banos": "Número de baños",
+        "Descripcion": "Descripción"
+    },
+    
+    "pantallaDos": {
+        "america_del_sur": "América del Sur",
+        "america_del_norte": "América del Norte",
+        "centro_america": "Centro América",
+        "europa": "Europa",
+        "asia": "Asia",
+        "africa": "África",
+        "oceania": "Oceanía",
+        "valor_noche": "Valor noche",
+        "se_requiere_de_este_campo": "Se requiere de este campo",
+        "lugar": "Lugar",
+        "descripcion_del_lugar": "Descripción del lugar",
+        "continente": "Continente",
+        "text": "Necesitamos la latitud y la longitud de su propiedad, ya que gestionamos un mapa que mostrará a sus futuros huéspedes la ubicación exacta. Puede encontrar estos datos en Google Maps o en su aplicación de localización preferida.",
+        "longitud": "Longitud",
+        "latitud": "Latitud"
+      },
+
+    "pantallaTres": {
+        "valor_limpieza": "Valor de limpieza",
+        "se_requiere_de_este_campo": "Se requiere de este campo",
+        "texts1": "Al hacer clic en el campo de habitaciones, aparecerá un botón. Utilícelo para agregar el título y una descripción sobre la habitación que está por añadir.",
+        "habitaciones": "Habitaciones",
+        "agregar": "Agregar",
+        "aceptar_terminos_y_condiciones": "Aceptar términos y condiciones",
+        "texts2": "Para acceder a nuestros términos y condiciones, por favor, haz clic en el siguiente botón",
+        "terminos_y_condiciones": "Términos y Condiciones",
+        "anadir_imagenes": "Añadir Imágenes",
+        "anadir_mas": "Añadir Más",
+        "texts3": "Después de seleccionar sus imágenes, haga clic en el icono de 'subir' para guardarlas en nuestro servidor. Este proceso puede demorar dependiendo de la cantidad de imágenes que esté subiendo."
+      },
+
+      "pantallaCuatro": {
+        "siteRules": "Reglas del sitio",
+        "rules": "Reglas",
+        "required": "Se requiere de este campo",
+        "siteSecurity": "Seguridad del sitio",
+        "security": "Seguridad"
+      },
+      
+      "actualizacionUno": {
+        "actualiza_tu_sitio": "Actualiza tu sitio",
+        "title": "Título",
+        "descripcion_del_sitio": "Descripción del sitio",
+        "numero_de_huespedes": "Número de huéspedes",
+        "valor_noche": "Valor noche",
+        "descripcion_del_lugar": "Descripción del lugar",
+        "texts1": "Necesitamos la latitud y la longitud de su propiedad, ya que gestionamos un mapa que mostrará a sus futuros huéspedes la ubicación exacta. Puede encontrar estos datos en Google Maps o en su aplicación de localización preferida.",
+        "latitud": "Latitud",
+        "longitud": "Longitud",
+        "valor_de_la_limpieza": "Valor de la limpieza",
+        "guardar": "Guardar"
+      },
+
+      "search": {
+        "spanish": "Español",
+        "english": "Ingles",
+        "login": "Iniciar Sesión",
+        "close": "Cerrar"
+      },
+
+      "identificacionClases": {
+        "error_al_verificar_credenciales": "Error al verificar credenciales.",
+        "cerrar": "Cerrar",
+        "iniciar_sesion": "Iniciar Sesión",
+        "viaja_con_estilo_destinos_de_ensueno_a_tu_alcance": "Viaja con Estilo, Destinos de Ensueño a Tu Alcance",
+        "diga_la_siguiente_palabra": "Diga la siguiente palabra:",
+        "texts1": "Descubre destinos inexplorados, vive experiencias únicas y crea recuerdos que durarán toda la vida. ¡Únete a la comunidad viajera y haz realidad tus sueños de viaje!",
+        "authentication": "Autenticación",
+        "password": "Cambio de contraseña",
+        "message": "¡Su contraseña fue cambiada exitosamente!",
+        "accept": "Aceptar",
+        "email": "E-mail",
+        "pass": "Contraseña",
+        "forgot": "¿Olvido la contraseña?"
+      },
+      
+      "pruebaEdit": {
+        "actualizar_datos": "Actualizar Datos",
+        "texts1": "¡Actualiza tus datos y no te pierdas la oportunidad de disfrutar las mejores vacaciones de tu vida! ¡Hazlo ahora y vive la experiencia al máximo!",
+        "telefono": "Teléfono",
+        "se_requiere_de_un_numero_de_telefono": "Se requiere de un número de teléfono",
+        "idioma": "Idioma",
+        "quieres_agregar_una_descripcion": "¿Quieres agregar una descripción?",
+        "descripcion": "Descripción",
+        "nombre_completo": "Nombre Completo",
+        "tipo_de_documento": "Tipo de Documento",
+        "numero_de_documento": "Número de Documento",
+        "texts2": "Usted se registrará como usuario y anfitrión. Solicitamos sus datos bancarios para realizar los respectivos pagos en caso de que ofrezca un sitio para alquilar. También, en caso de que cancele una reserva, estos datos nos ayudarán a hacer la respectiva devolución de su dinero.",
+        "bank": "Banco",
+        "numero_de_daviplata": "Numero de Daviplata",
+        "contrasena": "Contraseña",
+        "confirmacion_de_contrasena": "Confirmación de Contraseña",
+        "cambiar_contrasena": "Cambiar Contraseña",
+        "telefono_celular": "Télefono Celular",
+        "seleccionar_foto_de_perfil": "Seleccionar foto de perfil",
+        "listo": "Listo",
+        "cargando": "Cargando",
+        "texts3": "Cuando seleccione su foto de perfil, por favor, espere un momento mientras se carga en nuestro servidor. Asegúrese de desplazarse hasta el final de este formulario y guardar los cambios para que la nueva foto de perfil se aplique correctamente. Si no completa este paso, la imagen seleccionada no será guardada como su nueva foto de perfil."
+      },
+      "clases" :{
+        "singnIn": "Iniciar sesión",
+        "singUp":"Registrarse"
+      },
+
+      "lista": {
+        "cc": "Cedula de Ciudadanía",
+        "ce": "Cedula de Extranjería",
+        "pass": "Pasaporte",
+        "nit": "Número de identificación tributaria",
+        "banks": {
+            "one": "BANCOLOMBIA",
+            "two": "Banco de Bogotá",
+            "three": "Banco caja social",
+            "four": "Av Villas",
+            "five": "Banco de occidente",
+            "six": "Banco popular",
+            "seven": "Banco agrario",
+            "eight": "Davivienda",
+            "nine": "Colpatria"
+        }
+      },
+      "register" : {
+        "register" : "Registrarse",
+        "text1" : "Que esperas por regístrate, no te detengas de disfrutar de las mejores vacaciones de tu vida!!",
+        "tel" :"Teléfono",
+        "requiredPhone" : "Se requiere de un número de teléfono",
+        "lenguaje":"Idioma"
+    },
+
+    "pruebaTres": {
+        "sing_up": "Regístrate",
+        "text1": "Usted se registrará como usuario y anfitrión. Solicitamos sus datos bancarios para realizar los respectivos pagos en caso de que ofrezca un sitio para alquilar. También, en caso de que cancele una reserva, estos datos nos ayudarán a hacer la respectiva devolución de su dinero.",
+        "bank": "Banco",
+        "daviplata": "Número de Daviplata",
+        "contrasena_incorrecta": "Contraseña incorrecta" 
+    },
+
+    "menu_pdf": {
+        "text1": "Documento impreso exitosamente",
+        "text2": "Documento compartido exitosamente"
+    },
+    "pdf": {
+        "factura": "Factura StayAway",
+        "information": "Información StayAway",
+        "telefono": "Teléfono: {{name}}",
+        "nombre_del_sitio": "Nombre del sitio: {{name}}",
+        "nombre_del_cliente": "Nombre del Cliente: {{name}}",
+        "documento": "Documento: {{name}}",
+        "informacion_reserva": "Información de tu reserva"
+    },
+
+
+    "splashScreen": {
+        "explora_el_Mundo": {
+          "title": "Explora el Mundo",
+          "description": "Descubre destinos inexplorados, vive experiencias únicas y crea recuerdos que durarán toda la vida. ¡Únete a la comunidad viajera y haz realidad tus sueños de viaje!"
+        },
+        "viaja_con_Estilo": {
+          "title": "Viaja con Estilo",
+          "description": "Desde playas paradisíacas hasta metrópolis emocionantes, encuentra inspiración para tu próximo viaje y descubre ofertas exclusivas que harán que tu viaje sea inolvidable."
+        },
+        "rutas_Secretas": {
+          "title": "Rutas Secretas",
+          "description": "¿Buscas aventuras auténticas? Navega por nuestras rutas secretas y desentraña los tesoros ocultos que solo los viajeros más intrépidos conocen."
+        },
+        "planifica_Tu_Escape": {
+          "title": "Planifica Tu Escape",
+          "description": "Ya sea una escapada de fin de semana o un viaje de ensueño, nuestra app te ayudará a planificar el escape perfecto. ¡Deja que la aventura comience!"
+        },
+        "viajar_Transforma": {
+          "title": "Viajar Transforma",
+          "description": "El viaje no solo cambia tus destinos, también cambia tu perspectiva. Únete a nuestra comunidad global de viajeros y descubre cómo viajar puede transformar tu vida."
+        },
+
+        "skip": "Omitir"
+    },
+
+    "info_importante":{
+        "question":{
+            "title": "Información importante a tener en cuenta",
+            "text": "Antes de continuar con tu reserva, debes seleccionar el número de huéspedes. Recuerda que no deben ser más que el número de huéspedes permitidos por el anfitrión del sitio. En este caso, el máximo de huéspedes es {{name}}"
+        },
+        "question2":{
+            "text": "Antes de continuar con tu reserva, por favor selecciona las fechas de entrada y salida. Las fechas registradas actualmente son desde {{name}} hasta {{name2}}. Para continuar, debes cambiar esas fechas por las que deseas registrar para tu viaje."
+        }
+    },
+
+    "cosas_faltantes": {
+        "reset": "Reiniciar",
+        "select": "Seleccionar Icono",
+        "selectImage": "Seleccionar Imagen",
+        "roles":{
+            "text": "Cambió de rol en el aplicativo",
+            "user": "Usuario",
+            "admin": "Administrador"
+        },
+        "info": "Las siguientes fechas del {{date1}} hasta el {{date2}} están reservadas",
+        "alert":{
+            "title": "Recuperación de contraseña",
+            "text": "Un email fue enviado a la cuenta {{email}}",
+            "text2": "Ingrese su email para el restablecimiento de contraseña",
+            "text3": "Restablecer contraseña"
+        },
+
+        "all": "Todos los usuarios",
+        "name": "Nombre",
+        "mail": "Correo",
+        "rol": "Rol",
+        "update": "Actualizar rol",
+        "number": "Número de cuenta",
+        "date": "Fecha de registro",
+        "questions": {
+            "one": "¿Quieres eliminar este usuario?",
+            "summery": "Si elimina este usuario no hay marcha atrás. ¿Está seguro de hacer esta operación?"
+        },
+
+        "details": {
+            "guests": "{{name}} Huéspedes",
+            "rooms": "{{name}} Habitaciones",
+            "beds": "{{name}} Camas",
+            "Bathrooms": "{{name}} Baños",
+            "text": "Se registro el: {{fecha}}",
+            "info": "Ver información",
+            "info2": "Información del Anfitrión",
+            "anfi": "Anfitrión: {{name}}",
+            "contact": "Contacto",
+            "tel": "Teléfono fijo"
+        },
+        "disponibilidad": "Disponibilidad",
+        "summery": "No hay comentarios disponibles",
+        "add": "Añadir comentario",
+        "send": "Enviar Comentario",
+        "noche": "{{name}} noches",
+        "modalText": "Acerca de este espacio",
+        "showMore": "Mostrar Más >"
+    },
+
+    
+    "modalInfor": {
+        "texts": "Antes de continuar, revisa de que todos los campos estén correctamente."
+    },
+    
+    
+    "texts1": "Hola, por si no sabes aún como generar una reserva en nuestra app, puedes mirar un video que hemos generado para ti para que sepas más de nuestras funcionalidades.",
+
+    "textS": "Si estás registrando un sitio por primera vez, te invitamos a ver el siguiente video.",
+
+    "botonS": "Ver video",
+
+    "botonV": "Ir ahora al video",
+
+    "administradorE": "Administrador",
+
+    "usuarioE": "Usuario",
+
+    "pendienteE": "Pendiente",
+
+    "finalizadoE": "Finalizado",
+
+    "huella1": "Por favor, escanee su huella dactilar para confirmar su reserva",
+
+    "huella2": "Por favor, escanee su huella dactilar para acceder",
+
+    "voz1": "Por favor, mantenga presionado el botón mientras habla. Una vez haya terminado de hablar, suéltelo y vuelva a presionarlo para iniciar sesión",
+
+    "voz2": "Por favor, mantenga presionado el botón mientras habla. Una vez haya terminado de hablar, suéltelo y vuelva a presionarlo para realizar la reserva"
+}
