@@ -1184,11 +1184,16 @@ class _SitioFormState extends State<SitioForm> {
       )),
       // Cuarta pantalla con servicios
       Pantallas(
-          pantalla: Servicios(
-        nombreServicio: nombreServicio,
-        iconoServicio: iconoServicio,
-        descipcionServicio: descipcionServicio,
-      )),
+          pantalla: Column(
+            children: [
+              Servicios(
+                nombreServicio: nombreServicio,
+                iconoServicio: iconoServicio,
+                descipcionServicio: descipcionServicio,
+              )
+            ]
+          )
+      ),
       // Quinta pantalla con formulario
       Pantallas(
           pantalla: Form(
