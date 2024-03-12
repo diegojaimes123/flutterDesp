@@ -530,33 +530,47 @@ class _RegisterEditarState extends State<RegisterEditar> {
       Vistas(
         vista1: Form(
             key: formKey,
-            child: Expanded(
-              child: PruebaEditar3(
-                  tipoBanco: _tipoBancoController,
-                  cuentaBancaria: _cuentaBancariaController,
-                  numeroDaviplata: _numeroDaviplataController),
-            )),
+            child: Column(
+              children: [
+                Expanded(
+                  child: PruebaEditar3(
+                      tipoBanco: _tipoBancoController,
+                      cuentaBancaria: _cuentaBancariaController,
+                      numeroDaviplata: _numeroDaviplataController),
+                    ),
+              ],
+            ),
+        ),
       ),
       //Cuarta vista
       Vistas(
           vista1: Form(
         key: formKey,
-        child: Expanded(
-          child: PruebaEditar5(
-              celularController: _celularController,
-              imagenController: _imagenController),
+        child: Column(
+          children: [
+            Expanded(
+              child: PruebaEditar5(
+                  celularController: _celularController,
+                  imagenController: _imagenController),
+            ),
+          ]
         ),
       )),
       //Quinta Vista
       Vistas(
           vista1: Form(
-        key: formKey,
-        child: Expanded(
-            child: PruebaEditar4(
-                themeManager: thememanager,
-                contrasenha: _contrasenhaController,
-                confirmacionContasenha: _confirmacionContasenhaController)),
-      )),
+            key: formKey,
+            child: Column(
+              children: [
+                Expanded(
+                  child: PruebaEditar4(
+                      themeManager: thememanager,
+                      contrasenha: _contrasenhaController,
+                      confirmacionContasenha: _confirmacionContasenhaController)),  
+              ]
+            ),
+          ),
+      ),
     ];
     setState(() {
       listaVistas = lista;
