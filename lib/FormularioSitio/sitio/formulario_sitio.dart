@@ -1186,10 +1186,12 @@ class _SitioFormState extends State<SitioForm> {
       Pantallas(
           pantalla: Column(
             children: [
-              Servicios(
-                nombreServicio: nombreServicio,
-                iconoServicio: iconoServicio,
-                descipcionServicio: descipcionServicio,
+             Expanded(
+              child: Servicios(
+                  nombreServicio: nombreServicio,
+                  iconoServicio: iconoServicio,
+                  descipcionServicio: descipcionServicio,
+                ),
               )
             ]
           )
