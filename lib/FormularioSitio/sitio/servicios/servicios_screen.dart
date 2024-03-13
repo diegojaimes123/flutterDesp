@@ -81,98 +81,102 @@ class _ServiciosState extends State<Servicios> {
               ),
               const SizedBox(height: 20),
               // Grid de servicios
-              SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
-                  child: GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: Responsive.isMobile(context) ? 1 : 2),
-                    itemCount: servicio.length,
-                    itemBuilder: (context, index) {
-                      return GestureDetector(
-                        onTap: () {
-                          // Cambiar el estado isSelected al hacer clic en un servicio
-                          setState(() {
-                            servicio[index].isSelected =
-                                !servicio[index].isSelected;
-                          });
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 20),
-                          child: Container(
-                            height: 260,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: servicio[index].isSelected == true
-                                        ? const Color(0xFFAD974F)
-                                        : Colors.transparent,
-                                    spreadRadius: 5,
-                                    blurRadius: 7,
-                                    offset: const Offset(
-                                        0, 3), // changes position of shadow
-                                  ),
-                                ]),
-                            child: Stack(
-                              children: [
-                                Center(
-                                  child: Positioned(
-                                    top: 5,
-                                    left: 10,
-                                    right: 10,
-                                    child: Image(
-                                      image: AssetImage(servicio[index].icono),
-                                      width: 170,
-                                      height: 170,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
-                                Positioned(
-                                    bottom: 5,
-                                    right: 5,
-                                    left: 5,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          color: const Color(0xFFAD974F),
-                                          borderRadius:
-                                              BorderRadius.circular(20)),
-                                      child: ListTile(
-                                        title: FutureBuilder<String>(
-                                          future: traduccionVariables(
-                                              context, servicio[index].name),
-                                          builder: (context, snapshot) {
-                                            if (snapshot.connectionState ==
-                                                ConnectionState.waiting) {
-                                              return const CircularProgressIndicator();
-                                            } else if (snapshot.hasError) {
-                                              return Text(
-                                                  'Error: ${snapshot.error}');
-                                            } else {
-                                              return Text(
-                                                snapshot.data!,
-                                                style: const TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 17,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontFamily:
-                                                        'JosefinSans-SemiBold'),
-                                              );
-                                            }
-                                          },
+              Column(
+                children: [
+                  SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height,
+                      child: GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: Responsive.isMobile(context) ? 1 : 2),
+                        itemCount: servicio.length,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onTap: () {
+                              // Cambiar el estado isSelected al hacer clic en un servicio
+                              setState(() {
+                                servicio[index].isSelected =
+                                    !servicio[index].isSelected;
+                              });
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 20),
+                              child: Container(
+                                height: 260,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: servicio[index].isSelected == true
+                                            ? const Color(0xFFAD974F)
+                                            : Colors.transparent,
+                                        spreadRadius: 5,
+                                        blurRadius: 7,
+                                        offset: const Offset(
+                                            0, 3), // changes position of shadow
+                                      ),
+                                    ]),
+                                child: Stack(
+                                  children: [
+                                    Center(
+                                      child: Positioned(
+                                        top: 5,
+                                        left: 10,
+                                        right: 10,
+                                        child: Image(
+                                          image: AssetImage(servicio[index].icono),
+                                          width: 170,
+                                          height: 170,
+                                          fit: BoxFit.cover,
                                         ),
                                       ),
-                                    ))
-                              ],
+                                    ),
+                                    Positioned(
+                                        bottom: 5,
+                                        right: 5,
+                                        left: 5,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              color: const Color(0xFFAD974F),
+                                              borderRadius:
+                                                  BorderRadius.circular(20)),
+                                          child: ListTile(
+                                            title: FutureBuilder<String>(
+                                              future: traduccionVariables(
+                                                  context, servicio[index].name),
+                                              builder: (context, snapshot) {
+                                                if (snapshot.connectionState ==
+                                                    ConnectionState.waiting) {
+                                                  return const CircularProgressIndicator();
+                                                } else if (snapshot.hasError) {
+                                                  return Text(
+                                                      'Error: ${snapshot.error}');
+                                                } else {
+                                                  return Text(
+                                                    snapshot.data!,
+                                                    style: const TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 17,
+                                                        fontWeight: FontWeight.bold,
+                                                        fontFamily:
+                                                            'JosefinSans-SemiBold'),
+                                                  );
+                                                }
+                                              },
+                                            ),
+                                          ),
+                                        ))
+                                  ],
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                      );
-                    },
-                  )),
+                          );
+                        },
+                      )),
+                ],
+              ),
               const SizedBox(
                 height: defaultPadding,
               ),
