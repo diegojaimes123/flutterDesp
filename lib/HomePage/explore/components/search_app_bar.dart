@@ -349,7 +349,7 @@ class ThemeCard extends StatelessWidget {
           // cambia el icono dependiendo el tema seleccionado
           child: isDark
               ? SvgPicture.asset(
-                  "assets/icons/Light.svg",
+                  "assets/icons/light.svg",
                   color: Colors.white,
                 )
               : SvgPicture.asset(
