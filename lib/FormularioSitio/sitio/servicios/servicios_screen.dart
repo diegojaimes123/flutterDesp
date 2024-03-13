@@ -84,9 +84,7 @@ class _ServiciosState extends State<Servicios> {
               SizedBox(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
-                  child: Column(
-                    children: [
-                      GridView.builder(
+                  child: GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: Responsive.isMobile(context) ? 1 : 2),
                         itemCount: servicio.length,
@@ -176,8 +174,6 @@ class _ServiciosState extends State<Servicios> {
                           );
                         },
                       ),
-                    ],
-                  ),
               ),
               const SizedBox(
                 height: defaultPadding,
