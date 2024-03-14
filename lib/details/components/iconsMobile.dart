@@ -100,9 +100,11 @@ class _IconsMobileState extends State<IconsMobile> {
           // Bucle para verificar si el sitio es un favorito del usuario actual
           for (var uf = 0; uf < widget.usuario.length; uf++) {
             for (var f = 0; f < favorito.data!.length; f++) {
-              if (FirebaseAuth.instance.currentUser!.email ==
+              if (FirebaseAuth.instance.currentUser != null &&
+                FirebaseAuth.instance.currentUser!.email ==
                   widget.usuario[uf].correoElectronico) {
-                if ((favorito.data![f].sitio == widget.sitio.id) &&
+                if (favorito.data != null &&
+                  (favorito.data![f].sitio == widget.sitio.id) &&
                     (favorito.data![f].usuario == widget.usuario[uf].id)) {
                   favoritos = favorito.data![f];
                   isFavorite = true; // Establecer como favorito si coincide
