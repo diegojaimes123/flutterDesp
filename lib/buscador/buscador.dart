@@ -852,7 +852,18 @@ class _StepWidgetState extends State<StepWidget> {
                   );
                 } else {
                   // Mostrar un indicador de carga si no hay datos disponibles
-                  return const CircularProgressIndicator();
+                 return const Center(
+                    child: Column(
+                      children: [
+                        Text(
+                          "No hay sitios disponibles",
+                          style: TextStyle(
+                            fontSize: 15,
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
                 }
               },
             ),
