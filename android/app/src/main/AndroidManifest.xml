@@ -13,7 +13,7 @@
     <application
         android:label="StayAway"
         android:name="${applicationName}"
-        android:icon="@drawable/launch_black">
+        android:icon="@drawable/ic_launcher">
         <activity
             android:name=".MainActivity"
             android:exported="true"
