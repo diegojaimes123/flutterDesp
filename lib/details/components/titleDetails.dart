@@ -170,7 +170,8 @@ class _TitleDetailsState extends State<TitleDetails> {
                               for (var us = 0;
                                   us < widget.usuario.length;
                                   us++) {
-                                if (FirebaseAuth.instance.currentUser!.email ==
+                                if (FirebaseAuth.instance.currentUser != null &&
+                                  FirebaseAuth.instance.currentUser!.email ==
                                     widget.usuario[us].correoElectronico) {
                                   registerFavorito(
                                       widget.sitio.id, widget.usuario[us].id);
