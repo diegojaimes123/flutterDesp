@@ -876,5 +876,9 @@
 
     "voz1": "Please keep the button pressed while speaking. Once you've finished, release it and press it again to log in",
 
-    "voz2": "Please hold down the button while speaking. Once you've finished speaking, release it and press it again to make the reservation"
+    "voz2": "Please hold down the button while speaking. Once you've finished speaking, release it and press it again to make the reservation",
+
+    "modalExtra":{
+        "text": "Before proceeding with the reservation, we would like to remind you that during the period of dates you have selected, there is already a reservation that takes up a large part of those days. We kindly invite you to choose a different arrival date that is fully available. Thank you for your understanding and cooperation!"
+    }
 }
