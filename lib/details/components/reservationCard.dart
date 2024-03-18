@@ -547,7 +547,8 @@ class _ReservationCardState extends State<ReservationCard> {
                                       
                                       bool validador = false;
                                       for(var r = 0; r < reservaActivaR.length; r++){
-                                          if(DateTime.parse(fechaSalidaController.text).isBeforeOrEqual(DateTime.parse(reservaActivaR[r].fechaSalida)) && DateTime.parse(fechaEntradaController.text).isBeforeOrEqual(DateTime.parse(reservaActivaR[r].fechaEntrada))){
+                                          if(DateTime.parse(fechaSalidaController.text).isBeforeOrEqual(DateTime.parse(reservaActivaR[r].fechaSalida)) ||
+                                             DateTime.parse(fechaEntradaController.text).isBeforeOrEqual(DateTime.parse(reservaActivaR[r].fechaEntrada))){
                                             validador = true;
                                           }else{
                                             validador = false;
