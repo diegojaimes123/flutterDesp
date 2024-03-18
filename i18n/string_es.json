@@ -881,5 +881,10 @@
 
     "voz1": "Por favor, mantenga presionado el botón mientras habla. Una vez haya terminado de hablar, suéltelo y vuelva a presionarlo para iniciar sesión",
 
-    "voz2": "Por favor, mantenga presionado el botón mientras habla. Una vez haya terminado de hablar, suéltelo y vuelva a presionarlo para realizar la reserva"
+    "voz2": "Por favor, mantenga presionado el botón mientras habla. Una vez haya terminado de hablar, suéltelo y vuelva a presionarlo para realizar la reserva",
+
+    
+    "modalExtra":{
+        "text": "Antes de proceder con la reserva, nos gustaría recordarte que durante el período de fechas que has seleccionado, ya existe una reserva que ocupa una gran parte de esos días. Te invitamos amablemente a elegir una fecha de llegada diferente que esté totalmente disponible. ¡ ¡Gracias por tu comprensión y cooperación!"
+    }
 }
