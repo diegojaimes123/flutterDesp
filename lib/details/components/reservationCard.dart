@@ -492,7 +492,7 @@ class _ReservationCardState extends State<ReservationCard> {
                                                     .text.isNotEmpty &&
                                                 fechaSalidaController
                                                     .text.isNotEmpty &&
-                                                total.text != "0" && int.parse(total.text) <= widget.sitio.numHuespedes) {
+                                                total.text != "0") {
                                               // Modal para confirmar la reserva
                                               showConfirmarReserva(
                                                   context,
@@ -544,6 +544,15 @@ class _ReservationCardState extends State<ReservationCard> {
                                       }
                                       int numeroHuespedes =
                                           int.parse(total.text);
+                                      bool validador = false;
+                                      for(var r = 0; r < reservaActivaR.length; r++){
+                                          if(DateTime.parse(fechaSalidaController.text).isBeforeOrEqual(DateTime.parse(reservaActivaR[r].fechaSalida)) || DateTime.parse(fechaEntradaController.text).isBeforeOrEqual(DateTime.parse(reservaActivaR[r].fechaEntrada))){
+                                            validador = true;
+                                          }else{
+                                            validador = false;
+                                          }
+                                      }
+                                      
 
                                       if (total.text == "0" ||
                                           numeroHuespedes >
@@ -564,6 +573,8 @@ class _ReservationCardState extends State<ReservationCard> {
                                             context,
                                             fechaEntradaController.text,
                                             fechaSalidaController.text);
+                                      }else if(validador == true){
+                                        _modalFechasReservadas(context);
                                       }
                                     },
                                     child: Container(
@@ -1661,6 +1672,54 @@ _modalFechas(BuildContext context, fecha1, fecha2) {
                     child: Text(
                       texts.info_importante.question2
                           .text(name: fecha1, name2: fecha2),
+                      style: const TextStyle(color: primaryColor, fontSize: 13),
+                    ),
+                  ),
+                  Image.asset(
+                    "assets/images/logo.png",
+                    width: 150,
+                    height: 150,
+                  )
+                ],
+              ),
+            ),
+          ),
+          actions: [
+            // acciones del modal
+            ButtonBar(
+              alignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text(texts.mySites.accept)),
+              ],
+            ),
+          ],
+        );
+      });
+}
+
+_modalFechasReservadas(BuildContext context) {
+  showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(
+            texts.info_importante.question.title,
+            textAlign: TextAlign.center,
+          ),
+          content: SizedBox(
+            height: 250,
+            width: 400,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Text(
+                      texts.modalExtra.text,
                       style: const TextStyle(color: primaryColor, fontSize: 13),
                     ),
                   ),
