@@ -573,7 +573,9 @@ class _ReservationCardState extends State<ReservationCard> {
                                             context,
                                             fechaEntradaController.text,
                                             fechaSalidaController.text);
-                                      }else if(validador == true){
+                                      }
+
+                                      if(validador == true){
                                         _modalFechasReservadas(context);
                                       }
                                     },
