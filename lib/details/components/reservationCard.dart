@@ -544,8 +544,6 @@ class _ReservationCardState extends State<ReservationCard> {
                                       }
                                       int numeroHuespedes =
                                           int.parse(total.text);
-                                      
-                                     
 
                                       bool validador = false;
                                       for (var r = 0;
@@ -768,7 +766,17 @@ class _ReservationCardState extends State<ReservationCard> {
                             return TableCalendar(
                               locale: 'en_US',
                               rowHeight: 43,
+                              daysOfWeekStyle: const DaysOfWeekStyle(
+                                weekdayStyle: TextStyle(
+                                    color: primaryColor), // Cambia el color del texto de los días de la semana
+                                weekendStyle: TextStyle(
+                                    color: Color.fromARGB(255, 220, 123, 123),),),
                               calendarStyle: const CalendarStyle(
+                                defaultTextStyle:
+                                    TextStyle(color: primaryColor),
+                                weekendTextStyle: TextStyle(
+                                  color: Color.fromARGB(255, 220, 123, 123),
+                                ),
                                 rangeHighlightColor: primaryColor,
                                 todayDecoration: BoxDecoration(
                                     color: primaryColor,
@@ -777,7 +785,8 @@ class _ReservationCardState extends State<ReservationCard> {
                                     color: primaryColor,
                                     shape: BoxShape.circle),
                               ),
-                              headerStyle: const HeaderStyle(
+                              headerStyle:  const HeaderStyle(
+
                                   formatButtonVisible: false,
                                   titleCentered: true),
                               availableGestures: AvailableGestures.all,
@@ -856,7 +865,17 @@ class _ReservationCardState extends State<ReservationCard> {
                             return TableCalendar(
                               locale: 'en_US',
                               rowHeight: 43,
+                              daysOfWeekStyle: const DaysOfWeekStyle(
+                                weekdayStyle: TextStyle(
+                                    color: primaryColor), // Cambia el color del texto de los días de la semana
+                                weekendStyle: TextStyle(
+                                    color: Color.fromARGB(255, 220, 123, 123),),),
                               calendarStyle: const CalendarStyle(
+                                defaultTextStyle:
+                                    TextStyle(color: primaryColor),
+                                weekendTextStyle: TextStyle(
+                                  color: Color.fromARGB(255, 220, 123, 123),
+                                ),
                                 rangeHighlightColor: primaryColor,
                                 todayDecoration: BoxDecoration(
                                     color: primaryColor,
@@ -865,7 +884,8 @@ class _ReservationCardState extends State<ReservationCard> {
                                     color: primaryColor,
                                     shape: BoxShape.circle),
                               ),
-                              headerStyle: const HeaderStyle(
+                              headerStyle:  const HeaderStyle(
+
                                   formatButtonVisible: false,
                                   titleCentered: true),
                               availableGestures: AvailableGestures.all,
@@ -901,9 +921,11 @@ class _ReservationCardState extends State<ReservationCard> {
   int restaDias(DateTime fechaEntrada, DateTime fechaSalida) {
     int diferenciaDias = fechaSalida.difference(fechaEntrada).inDays;
 
-    // Validar si el numero de días en menor a 0
-    if (diferenciaDias <= 0) {
+    // Validar si el numero de días en menor a 0 20
+    if (diferenciaDias < 0) {
       return 0;
+    } else if (diferenciaDias == 0) {
+      return diferenciaDias;
     } else {
       return diferenciaDias;
     }
