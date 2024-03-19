@@ -545,27 +545,33 @@ class _ReservationCardState extends State<ReservationCard> {
                                       int numeroHuespedes =
                                           int.parse(total.text);
                                       
+                                     
+
                                       bool validador = false;
-                                      for(var r = 0; r < reservaActivaR.length; r++){
-                                          if(DateTime.parse(fechaSalidaController.text).isBeforeOrEqual(DateTime.parse(reservaActivaR[r].fechaSalida)) ||
-                                             DateTime.parse(fechaEntradaController.text).isBeforeOrEqual(DateTime.parse(reservaActivaR[r].fechaEntrada))){
-                                            validador = true;
-                                          }else{
-                                            validador = false;
-                                          }
+                                      for (var r = 0;
+                                          r < reservaActivaR.length;
+                                          r++) {
+                                        if (DateTime.parse(
+                                                    fechaSalidaController.text)
+                                                .isBeforeOrEqual(DateTime.parse(
+                                                    reservaActivaR[r]
+                                                        .fechaSalida)) ||
+                                            DateTime.parse(
+                                                    fechaEntradaController.text)
+                                                .isBeforeOrEqual(DateTime.parse(
+                                                    reservaActivaR[r]
+                                                        .fechaEntrada))) {
+                                          validador = true;
+                                        } else {
+                                          validador = false;
+                                        }
                                       }
-                                      
+
                                       if (total.text == "0" ||
                                           numeroHuespedes >
                                               widget.sitio.numHuespedes) {
                                         _modalInformacion(
                                             context, widget.sitio.numHuespedes);
-                                      } else if (fechaEntradaController.text ==
-                                          fechaSalidaController.text) {
-                                        _modalFechas(
-                                            context,
-                                            fechaEntradaController.text,
-                                            fechaSalidaController.text);
                                       } else if (DateTime.parse(
                                               fechaSalidaController.text)
                                           .isBeforeOrEqual(DateTime.parse(
@@ -575,8 +581,9 @@ class _ReservationCardState extends State<ReservationCard> {
                                             fechaEntradaController.text,
                                             fechaSalidaController.text);
                                       }
-
-                                      if(validador = true && FirebaseAuth.instance.currentUser != null){
+                                      if (validador == true &&
+                                          FirebaseAuth.instance.currentUser !=
+                                              null) {
                                         _modalFechasReservadas(context);
                                       }
                                     },
