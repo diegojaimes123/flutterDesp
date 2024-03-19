@@ -1,5 +1,5 @@
 // ignore_for_file: file_names
 
-String djangoApi = "https://djangodesp-simple.onrender.com";
+String djangoApi = "https://reserva-oohj.onrender.com/";
 
-String nodeChat = "https://nodedespsimple.onrender.com";
+String nodeChat = "https://stayawaychat.onrender.com/";
