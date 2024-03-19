@@ -227,13 +227,16 @@ class _SplashScreenState extends State<SplashScreen> {
                                             ),
                                           )),
                                       onPressed: () {
-                                        Navigator.of(context).push(
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    HomeScreenPage(
-                                                      themeManager:
-                                                          widget.themeManager,
-                                                    )));
+                                       Navigator.of(context)
+                                            .pushAndRemoveUntil(
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                HomeScreenPage(
+                                              themeManager: widget.themeManager,
+                                            ),
+                                          ),
+                                          (route) => false,
+                                        );
                                       })
                                 ],
                               ),
@@ -279,13 +282,16 @@ class _SplashScreenState extends State<SplashScreen> {
                                     if (currentIndex ==
                                         listaComponents.length - 1) {
                                       if (porcentaje == 1) {
-                                        Navigator.of(context).push(
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    HomeScreenPage(
-                                                      themeManager:
-                                                          widget.themeManager,
-                                                    )));
+                                        Navigator.of(context)
+                                            .pushAndRemoveUntil(
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                HomeScreenPage(
+                                              themeManager: widget.themeManager,
+                                            ),
+                                          ),
+                                          (route) => false,
+                                        );
                                       }
                                     }
                                     controller!.nextPage(
@@ -544,13 +550,16 @@ class _SplashScreenState extends State<SplashScreen> {
                                             ),
                                           )),
                                       onPressed: () {
-                                        Navigator.of(context).push(
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    HomeScreenPage(
-                                                      themeManager:
-                                                          widget.themeManager,
-                                                    )));
+                                        Navigator.of(context)
+                                            .pushAndRemoveUntil(
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                HomeScreenPage(
+                                              themeManager: widget.themeManager,
+                                            ),
+                                          ),
+                                          (route) => false,
+                                        );
                                       })
                                 ],
                               ),
@@ -596,13 +605,16 @@ class _SplashScreenState extends State<SplashScreen> {
                                     if (currentIndex ==
                                         listaComponents.length - 1) {
                                       if (porcentaje == 1) {
-                                        Navigator.of(context).push(
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    HomeScreenPage(
-                                                      themeManager:
-                                                          widget.themeManager,
-                                                    )));
+                                        Navigator.of(context)
+                                            .pushAndRemoveUntil(
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                HomeScreenPage(
+                                              themeManager: widget.themeManager,
+                                            ),
+                                          ),
+                                          (route) => false,
+                                        );
                                       }
                                     }
                                     controller!.nextPage(
@@ -796,13 +808,17 @@ class _SplashScreenState extends State<SplashScreen> {
                                             ),
                                           )),
                                       onPressed: () {
-                                        Navigator.of(context).push(
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    HomeScreenPage(
-                                                      themeManager:
-                                                          widget.themeManager,
-                                                    )));
+                                        
+                                        Navigator.of(context)
+                                            .pushAndRemoveUntil(
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                HomeScreenPage(
+                                              themeManager: widget.themeManager,
+                                            ),
+                                          ),
+                                          (route) => false,
+                                        );
                                       })
                                 ],
                               ),
@@ -849,13 +865,16 @@ class _SplashScreenState extends State<SplashScreen> {
                                     if (currentIndex ==
                                         listaComponents.length - 1) {
                                       if (porcentaje == 1) {
-                                        Navigator.of(context).push(
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    HomeScreenPage(
-                                                      themeManager:
-                                                          widget.themeManager,
-                                                    )));
+                                       Navigator.of(context)
+                                            .pushAndRemoveUntil(
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                HomeScreenPage(
+                                              themeManager: widget.themeManager,
+                                            ),
+                                          ),
+                                          (route) => false,
+                                        );
                                       }
                                     }
                                     controller!.nextPage(
