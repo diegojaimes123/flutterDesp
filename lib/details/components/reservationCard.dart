@@ -576,7 +576,7 @@ class _ReservationCardState extends State<ReservationCard> {
                                             fechaSalidaController.text);
                                       }
 
-                                      if(validador = true && Firebase.instance.currentUser != null){
+                                      if(validador = true && FirebaseAuth.instance.currentUser != null){
                                         _modalFechasReservadas(context);
                                       }
                                     },
