@@ -42,7 +42,7 @@ class _PruebaState extends State<Prueba> {
 
   // Variable que indica si se desea agregar una descripción
   bool addDescription = false;
-
+  String? cedula;
   // Formato del teléfono con la cantidad de dígitos permitidos
   var inputtelefono = MaskTextInputFormatter(
       mask: "### ### ####", filter: {"#": RegExp(r'[0-9]')});
@@ -408,7 +408,6 @@ class _Prueba2State extends State<Prueba2> {
                 onChanged: (String? value) {
                   // Actualización del valor seleccionado
                   setState(() {
-                    //selectedBank = value;
                     cedula = value;
                     tipoDocumento.text = cedula!;
                   });
@@ -541,7 +540,6 @@ class _Prueba3State extends State<Prueba3> {
   TextEditingController tipoBanco = TextEditingController();
   TextEditingController cuentaBancaria = TextEditingController();
   TextEditingController numeroDaviplata = TextEditingController();
-  String? selectedBank;
   // Mascara para el número de telefono
   var inputtelefono = MaskTextInputFormatter(
       mask: "### ### ####", filter: {"#": RegExp(r'[0-9]')});
@@ -629,12 +627,12 @@ class _Prueba3State extends State<Prueba3> {
                           ),
                         ))
                     .toList(),
-                value: selectedBank,
+                value: cedula,
                 onChanged: (String? value) {
                   // Actualización del valor seleccionado
                   setState(() {
-                    selectedBank = value;
-                    //tipoBanco.text = selectedValue!;
+                    cedula = value;
+                    tipoBanco.text = selectedValue!;
                   });
 
                   if (selectedValue == null || selectedValue!.isEmpty) {
