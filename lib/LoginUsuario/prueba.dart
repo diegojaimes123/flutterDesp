@@ -408,6 +408,7 @@ class _Prueba2State extends State<Prueba2> {
                 onChanged: (String? value) {
                   // Actualización del valor seleccionado
                   setState(() {
+                    //selectedBank = value;
                     cedula = value;
                     tipoDocumento.text = cedula!;
                   });
@@ -540,7 +541,7 @@ class _Prueba3State extends State<Prueba3> {
   TextEditingController tipoBanco = TextEditingController();
   TextEditingController cuentaBancaria = TextEditingController();
   TextEditingController numeroDaviplata = TextEditingController();
-
+  String? selectedBank;
   // Mascara para el número de telefono
   var inputtelefono = MaskTextInputFormatter(
       mask: "### ### ####", filter: {"#": RegExp(r'[0-9]')});
@@ -628,12 +629,12 @@ class _Prueba3State extends State<Prueba3> {
                           ),
                         ))
                     .toList(),
-                value: selectedValue,
+                value: selectedBank,
                 onChanged: (String? value) {
                   // Actualización del valor seleccionado
                   setState(() {
-                    selectedValue = value;
-                    tipoBanco.text = selectedValue!;
+                    selectedBank = value;
+                    //tipoBanco.text = selectedValue!;
                   });
 
                   if (selectedValue == null || selectedValue!.isEmpty) {
@@ -710,8 +711,17 @@ class _Prueba3State extends State<Prueba3> {
                     hintStyle: const TextStyle(color: Colors.black),
                     fillColor: Colors.grey[200],
                     filled: true,
+                    
                   ),
+                  validator: (String? value) {
+                    // Validar campo
+                    if (value == null || value.isEmpty) {
+                      return texts.pantallaTres.se_requiere_de_este_campo;
+                    }
+                    return null;
+                  },
                 ),
+                
               ),
             ),
           ),
@@ -747,6 +757,14 @@ class _Prueba3State extends State<Prueba3> {
                     fillColor: Colors.grey[200],
                     filled: true,
                   ),
+                  validator: (String? value) {
+                    // Validar campo
+                    if (value == null || value.isEmpty) {
+                      return texts.pantallaTres.se_requiere_de_este_campo;
+                    }
+                    return null;
+                  },
+                  
                 ),
               ),
             ),
