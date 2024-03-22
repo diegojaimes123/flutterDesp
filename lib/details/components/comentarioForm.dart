@@ -149,6 +149,7 @@ class _ComentarioState extends State<Comentario> {
           Row(
             children: [
               RatingBar.builder(
+                unratedColor: const Color.fromARGB(255, 65, 63, 55),
                 itemSize: 25,
                 updateOnDrag: true,
                 minRating: 1,
@@ -255,6 +256,7 @@ class _ComentarioState extends State<Comentario> {
           Row(
             children: [
               RatingBar.builder(
+                unratedColor: const Color.fromARGB(255, 65, 63, 55),
                 itemSize: 25,
                 updateOnDrag: true,
                 minRating: 1,
@@ -363,6 +365,7 @@ class _ComentarioState extends State<Comentario> {
           Row(
             children: [
               RatingBar.builder(
+                unratedColor: const Color.fromARGB(255, 65, 63, 55),
                 itemSize: 25,
                 updateOnDrag: true,
                 minRating: 1,
@@ -469,6 +472,7 @@ class _ComentarioState extends State<Comentario> {
           Row(
             children: [
               RatingBar.builder(
+                unratedColor: const Color.fromARGB(255, 65, 63, 55),
                 itemSize: 25,
                 updateOnDrag: true,
                 minRating: 1,
@@ -577,6 +581,7 @@ class _ComentarioState extends State<Comentario> {
           Row(
             children: [
               RatingBar.builder(
+                unratedColor: const Color.fromARGB(255, 65, 63, 55),
                 itemSize: 25,
                 updateOnDrag: true,
                 minRating: 1,
@@ -683,6 +688,7 @@ class _ComentarioState extends State<Comentario> {
           Row(
             children: [
               RatingBar.builder(
+                unratedColor: const Color.fromARGB(255, 65, 63, 55),
                 itemSize: 25,
                 updateOnDrag: true,
                 minRating: 1,
