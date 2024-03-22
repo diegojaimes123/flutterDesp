@@ -156,7 +156,7 @@ class _SideMenuState extends State<SideMenu> {
                   DrawerListTile(
                     title: isDark ? texts.dashboard.claro : texts.dashboard.oscuro,
                     svgSrc: isDark
-                        ? "assets/icons/Light.svg"
+                        ? "assets/icons/light.svg"
                         : "assets/icons/dark.svg",
                     press: () {
                       // Cambiar el tema claro/oscuro de la aplicación.
