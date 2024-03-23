@@ -874,11 +874,17 @@
 
     "huella2": "Please scan your fingerprint to access",
 
-    "voz1": "Please keep the button pressed while speaking. Once you've finished, release it and press it again to log in",
+    "modalExtra": "Before proceeding with the reservation, we would like to remind you that during the period of dates you have selected, there is already a reservation that takes up a large part of those days. We kindly invite you to choose a different arrival date that is fully available. Thank you for your understanding and cooperation!",
 
-    "voz2": "Please hold down the button while speaking. Once you've finished speaking, release it and press it again to make the reservation",
+    "modalUsuarioAlerta": "This action cannot be completed because the user has key information within the application!",
 
-    "modalExtra":{
-        "text": "Before proceeding with the reservation, we would like to remind you that during the period of dates you have selected, there is already a reservation that takes up a large part of those days. We kindly invite you to choose a different arrival date that is fully available. Thank you for your understanding and cooperation!"
-    }
+    "botonM1": "Use the microphone",
+
+    "botonM2": "Analyzing",
+
+    "botonM3": "Access denied",
+    
+    "botonM4": "Continue",
+
+    "chatBotM": "Write the word StayAway"
 }

@@ -770,12 +770,12 @@ class _ReservationCardState extends State<ReservationCard> {
                                 weekdayStyle: TextStyle(
                                     color: primaryColor), // Cambia el color del texto de los días de la semana
                                 weekendStyle: TextStyle(
-                                    color: Color.fromARGB(255, 220, 123, 123),),),
+                                    color: Color.fromARGB(255, 183, 135, 0),),),
                               calendarStyle: const CalendarStyle(
                                 defaultTextStyle:
                                     TextStyle(color: primaryColor),
                                 weekendTextStyle: TextStyle(
-                                  color: Color.fromARGB(255, 220, 123, 123),
+                                  color: Color.fromARGB(255, 183, 135, 0),
                                 ),
                                 rangeHighlightColor: primaryColor,
                                 todayDecoration: BoxDecoration(
@@ -869,12 +869,12 @@ class _ReservationCardState extends State<ReservationCard> {
                                 weekdayStyle: TextStyle(
                                     color: primaryColor), // Cambia el color del texto de los días de la semana
                                 weekendStyle: TextStyle(
-                                    color: Color.fromARGB(255, 220, 123, 123),),),
+                                    color: Color.fromARGB(255, 183, 135, 0),),),
                               calendarStyle: const CalendarStyle(
                                 defaultTextStyle:
                                     TextStyle(color: primaryColor),
                                 weekendTextStyle: TextStyle(
-                                  color: Color.fromARGB(255, 220, 123, 123),
+                                  color: Color.fromARGB(255, 183, 135, 0),
                                 ),
                                 rangeHighlightColor: primaryColor,
                                 todayDecoration: BoxDecoration(
@@ -1751,7 +1751,7 @@ _modalFechasReservadas(BuildContext context) {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Text(
-                      texts.modalExtra.text,
+                      texts.modalExtra,
                       style: const TextStyle(color: primaryColor, fontSize: 13),
                     ),
                   ),

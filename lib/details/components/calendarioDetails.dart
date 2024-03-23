@@ -76,7 +76,19 @@ class _CalendarioDetailsState extends State<CalendarioDetails> {
             return TableCalendar(
               locale: 'en_US',
               rowHeight: 43,
+              daysOfWeekStyle: const DaysOfWeekStyle(
+                weekdayStyle: TextStyle(
+                    color:
+                        primaryColor), // Cambia el color del texto de los días de la semana
+                weekendStyle: TextStyle(
+                  color: Color.fromARGB(255, 183, 135, 0),
+                ),
+              ),
               calendarStyle: const CalendarStyle(
+                defaultTextStyle: TextStyle(color: primaryColor),
+                weekendTextStyle: TextStyle(
+                  color: Color.fromARGB(255, 183, 135, 0),
+                ),
                 rangeHighlightColor: primaryColor,
                 todayDecoration:
                     BoxDecoration(color: primaryColor, shape: BoxShape.circle),

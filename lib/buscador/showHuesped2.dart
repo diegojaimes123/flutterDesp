@@ -19,6 +19,8 @@ class ShowHuesped2 extends StatefulWidget {
 
   TextEditingController total;
 
+  TextEditingController overlayVisible;
+
   final VoidCallback updateTotalCallback;
 
   ShowHuesped2({
@@ -29,6 +31,7 @@ class ShowHuesped2 extends StatefulWidget {
     required this.numBebesController,
     required this.numMascotasController,
     required this.total,
+    required this.overlayVisible,
     required this.updateTotalCallback,
   });
 
@@ -750,8 +753,13 @@ class _ShowHuesped2State extends State<ShowHuesped2> {
                             (numAdultos + numNinos + numBebes + numMascotas)
                                 .toString();
                       });
+                      if (widget.overlayVisible.text == "true") {
+                        hideOverlay();
+                        setState(() {
+                          widget.overlayVisible.text = "false";
+                        });
+                      }
                       widget.updateTotalCallback();
-                      hideOverlay();
                     },
                     child: Text(
                       texts.buscador.card.save,

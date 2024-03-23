@@ -878,13 +878,18 @@
     "huella1": "Por favor, escanee su huella dactilar para confirmar su reserva",
 
     "huella2": "Por favor, escanee su huella dactilar para acceder",
+ 
+    "modalExtra": "Antes de proceder con la reserva, nos gustaría recordarte que durante el período de fechas que has seleccionado, ya existe una reserva que ocupa una gran parte de esos días. Te invitamos amablemente a elegir una fecha de llegada diferente que esté totalmente disponible. ¡ ¡Gracias por tu comprensión y cooperación!",
 
-    "voz1": "Por favor, mantenga presionado el botón mientras habla. Una vez haya terminado de hablar, suéltelo y vuelva a presionarlo para iniciar sesión",
+    "modalUsuarioAlerta": "¡Esta acción no puede completarse porque el usuario tiene información clave dentro de la aplicación!",
 
-    "voz2": "Por favor, mantenga presionado el botón mientras habla. Una vez haya terminado de hablar, suéltelo y vuelva a presionarlo para realizar la reserva",
+    "botonM1": "Utilice el micrófono",
 
-    
-    "modalExtra":{
-        "text": "Antes de proceder con la reserva, nos gustaría recordarte que durante el período de fechas que has seleccionado, ya existe una reserva que ocupa una gran parte de esos días. Te invitamos amablemente a elegir una fecha de llegada diferente que esté totalmente disponible. ¡ ¡Gracias por tu comprensión y cooperación!"
-    }
+    "botonM2": "Analizando",
+
+    "botonM3": "Acceso denegado",
+
+    "botonM4": "Continuar",
+
+    "chatBotM": "Escribe la palabra StayAway"
 }

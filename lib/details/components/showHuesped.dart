@@ -7,7 +7,7 @@ import 'package:proyecto_final/theme/theme_constants.dart';
 // ignore: must_be_immutable
 class ShowHuesped extends StatefulWidget {
   // propiedades para el funcionamiento del desplegable y para contabilizar los huespedes
-  final OverlayEntry? entry;
+  OverlayEntry? entry;
   TextEditingController numAdultosController;
 
   TextEditingController numNinosController;
@@ -17,6 +17,8 @@ class ShowHuesped extends StatefulWidget {
   TextEditingController numMascotasController;
 
   TextEditingController total;
+
+  TextEditingController overlayVisible;
 
   final VoidCallback updateTotalCallback;
 
@@ -28,6 +30,7 @@ class ShowHuesped extends StatefulWidget {
     required this.numBebesController,
     required this.numMascotasController,
     required this.total,
+    required this.overlayVisible,
     required this.updateTotalCallback,
   });
 
@@ -38,7 +41,12 @@ class ShowHuesped extends StatefulWidget {
 class _ShowHuespedState extends State<ShowHuesped> {
   // Función para cerrar el desplegable del conteo de huespedes
   void hideOverlay() {
-    widget.entry?.remove();
+    if (widget.entry != null) {
+      if (widget.entry?.mounted == true) {
+        widget.entry?.remove();
+      }
+      widget.entry = null;
+    }
   }
 
   _ShowHuespedState();
@@ -443,8 +451,13 @@ class _ShowHuespedState extends State<ShowHuesped> {
                                 (numAdultos + numNinos + numBebes + numMascotas)
                                     .toString();
                           });
+                          if (widget.overlayVisible.text == "true") {
+                            hideOverlay();
+                            setState(() {
+                              widget.overlayVisible.text = "false";
+                            });
+                          }
                           widget.updateTotalCallback();
-                          hideOverlay();
                         },
                         child: Text(
                           texts.showHuesped.save,

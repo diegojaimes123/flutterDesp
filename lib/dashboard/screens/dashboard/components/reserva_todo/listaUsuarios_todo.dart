@@ -5,6 +5,9 @@ import 'package:proyecto_final/Env.dart';
 import 'package:proyecto_final/HomePage/home_screens.dart';
 import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_todo/RolUsuario.dart';
 import 'package:proyecto_final/generated/translations.g.dart';
+import 'package:proyecto_final/models/ComentarioModel.dart';
+import 'package:proyecto_final/models/ReservaModel.dart';
+import 'package:proyecto_final/models/SitioModel.dart';
 import 'package:proyecto_final/models/UsuariosModel.dart';
 import 'package:proyecto_final/responsive.dart';
 import 'package:proyecto_final/theme/theme_constants.dart';
@@ -198,15 +201,95 @@ class _ListaUsuarioState extends State<ListaUsuario> {
               backgroundColor: MaterialStatePropertyAll(primaryColor)),
           child: Text(texts.cosas_faltantes.update),
         )),
-        DataCell(ElevatedButton(
-          onPressed: () {
-            // Modal para borrar el usuario
-            _modalBorrarUsuario(context, usuariosInfo, themeManager);
-          },
-          style: const ButtonStyle(
-              backgroundColor: MaterialStatePropertyAll(primaryColor)),
-          child: Text(texts.categories.delete),
-        )),
+        DataCell(FutureBuilder(
+            future: getReservas(),
+            builder: (context, AsyncSnapshot<List<ReservaModel>> reserva) {
+              // Mientras carga la información
+              if (reserva.connectionState == ConnectionState.waiting) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+              return FutureBuilder(
+                  future: getComentarios(),
+                  builder: (context,
+                      AsyncSnapshot<List<ComentarioModel>> comentario) {
+                    // Mientras carga la información
+                    if (comentario.connectionState == ConnectionState.waiting) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+                    return FutureBuilder(
+                        future: getSitios(),
+                        builder:
+                            (context, AsyncSnapshot<List<SitioModel>> sitio) {
+                          // Mientras carga la información
+                          if (sitio.connectionState ==
+                              ConnectionState.waiting) {
+                            return const Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          }
+
+                          return ElevatedButton(
+                            onPressed: () {
+                              bool sitioUsuario = false;
+
+                              bool reservaUsuario = false;
+
+                              bool comentarioUsuario = false;
+
+                              for (var su = 0; su < sitio.data!.length; su++) {
+                                if (sitio.data![su].usuario ==
+                                    usuariosInfo.id) {
+                                  setState(() {
+                                    sitioUsuario = true;
+                                  });
+                                }
+                              }
+
+                              for (var cu = 0;
+                                  cu < comentario.data!.length;
+                                  cu++) {
+                                if (comentario.data![cu].usuario ==
+                                    usuariosInfo.id) {
+                                  setState(() {
+                                    comentarioUsuario = true;
+                                  });
+                                }
+                              }
+
+                              for (var ru = 0;
+                                  ru < reserva.data!.length;
+                                  ru++) {
+                                if (reserva.data![ru].usuario ==
+                                    usuariosInfo.id) {
+                                  setState(() {
+                                    reservaUsuario = true;
+                                  });
+                                }
+                              }
+
+                              if (reservaUsuario == false &&
+                                  comentarioUsuario == false &&
+                                  sitioUsuario == false &&
+                                  usuariosInfo.rolAdmin == true) {
+                                // Modal para borrar el usuario
+                                _modalBorrarUsuario(
+                                    context, usuariosInfo, themeManager);
+                              } else {
+                                _modalRestringirUsuario(context);
+                              }
+                            },
+                            style: const ButtonStyle(
+                                backgroundColor:
+                                    MaterialStatePropertyAll(primaryColor)),
+                            child: Text(texts.categories.delete),
+                          );
+                        });
+                  });
+            })),
       ],
     );
   }
@@ -668,6 +751,60 @@ void _modalBorrarUsuario(
                       }
                     },
                     child: Text(texts.categories.delete)),
+              ],
+            ),
+          ],
+        );
+      });
+}
+
+// Modal para restringir la eliminación del usuario
+void _modalRestringirUsuario(BuildContext context) {
+  showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(
+            texts.cosas_faltantes.questions.one,
+            textAlign: TextAlign.center,
+          ),
+          content: SizedBox(
+            height: 250,
+            width: 400,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: defaultPadding,
+                  ),
+                  Center(
+                    child: Text(
+                      texts.modalUsuarioAlerta,
+                      style: const TextStyle(color: Colors.grey),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: defaultPadding,
+                  ),
+                  Image.asset(
+                    "assets/images/logo.png",
+                    width: 150,
+                    height: 150,
+                  )
+                ],
+              ),
+            ),
+          ),
+          actions: [
+            ButtonBar(
+              alignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text(texts.reserva.cerrar)),
               ],
             ),
           ],

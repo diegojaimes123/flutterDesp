@@ -62,6 +62,7 @@ class _IdentificacionRClasesState extends State<IdentificacionRClases>
   var text = "stay away";
   var valor = "";
   var isListening = false;
+  var botonId = texts.botonM1;
 
   // Método para realizar la autenticación y registrar la reserva
   Future logInR() async {
@@ -257,6 +258,9 @@ class _IdentificacionRClasesState extends State<IdentificacionRClases>
                                   child: GestureDetector(
                                     // Configurar un gesto de toque hacia abajo (onTapDown)
                                     onTapDown: (details) async {
+                                      setState(() {
+                                        botonId = texts.botonM2;
+                                      });
                                       // Verificar si el reconocimiento de voz no está en curso
                                       if (!isListening) {
                                         // Inicializar el reconocimiento de voz
@@ -286,8 +290,13 @@ class _IdentificacionRClasesState extends State<IdentificacionRClases>
                                       speechToText.stop();
                                       // Verificar si el texto reconocido coincide con el texto esperado
                                       if (text == valor.toLowerCase()) {
-                                        // Realizar la acción correspondiente (en este caso, llamar al método logInR())
-                                        logInR();
+                                        setState(() {
+                                          botonId = texts.botonM4;
+                                        });
+                                      } else {
+                                        setState(() {
+                                          botonId = texts.botonM3;
+                                        });
                                       }
                                     },
                                     child: CircleAvatar(
@@ -307,17 +316,42 @@ class _IdentificacionRClasesState extends State<IdentificacionRClases>
                             const SizedBox(
                               height: 10,
                             ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 25.0),
-                              child: Center(
-                                child: Text(
-                                  texts.voz2,
-                                  style: const TextStyle(
-                                      fontSize: 15, color: Colors.white),
-                                  textAlign: TextAlign.center,
+                            Center(
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 65),
+                                child: InkWell(
+                                  onTap: () {
+                                    // Verificar si el texto reconocido coincide con el texto esperado
+                                    if (text == valor.toLowerCase()) {
+                                      // Realizar la acción correspondiente (en este caso, llamar al método logInR())
+                                      logInR();
+                                    }
+                                  },
+                                  child: Container(
+                                    width: 200,
+                                    height: 50,
+                                    padding: const EdgeInsets.all(15.0),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        botonId,
+                                        style: const TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 17,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ),
+                            ),
+                            const SizedBox(
+                              height: 20,
                             ),
                           ],
                         ),
@@ -431,6 +465,9 @@ class _IdentificacionRClasesState extends State<IdentificacionRClases>
                                   child: GestureDetector(
                                     // Configurar un gesto de toque hacia abajo (onTapDown)
                                     onTapDown: (details) async {
+                                      setState(() {
+                                        botonId = texts.botonM2;
+                                      });
                                       // Verificar si el reconocimiento de voz no está en curso
                                       if (!isListening) {
                                         // Inicializar el reconocimiento de voz
@@ -460,8 +497,13 @@ class _IdentificacionRClasesState extends State<IdentificacionRClases>
                                       speechToText.stop();
                                       // Verificar si el texto reconocido coincide con el texto esperado
                                       if (text == valor.toLowerCase()) {
-                                        // Realizar la acción correspondiente (en este caso, llamar al método logInR())
-                                        logInR();
+                                        setState(() {
+                                          botonId = texts.botonM4;
+                                        });
+                                      } else {
+                                        setState(() {
+                                          botonId = texts.botonM3;
+                                        });
                                       }
                                     },
                                     child: CircleAvatar(
@@ -481,17 +523,42 @@ class _IdentificacionRClasesState extends State<IdentificacionRClases>
                             const SizedBox(
                               height: 10,
                             ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 25.0),
-                              child: Center(
-                                child: Text(
-                                  texts.voz2,
-                                  style: const TextStyle(
-                                      fontSize: 15, color: Colors.white),
-                                  textAlign: TextAlign.center,
+                            Center(
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 60),
+                                child: InkWell(
+                                  onTap: () {
+                                    // Verificar si el texto reconocido coincide con el texto esperado
+                                    if (text == valor.toLowerCase()) {
+                                      // Realizar la acción correspondiente (en este caso, llamar al método logInR())
+                                      logInR();
+                                    }
+                                  },
+                                  child: Container(
+                                    width: 120,
+                                    height: 45,
+                                    padding: const EdgeInsets.all(13.0),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        botonId,
+                                        style: const TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ),
+                            ),
+                            const SizedBox(
+                              height: 20,
                             ),
                           ],
                         ),
@@ -606,6 +673,9 @@ class _IdentificacionRClasesState extends State<IdentificacionRClases>
                                     child: GestureDetector(
                                       // Configurar un gesto de toque hacia abajo (onTapDown)
                                       onTapDown: (details) async {
+                                        setState(() {
+                                          botonId = texts.botonM2;
+                                        });
                                         // Verificar si el reconocimiento de voz no está en curso
                                         if (!isListening) {
                                           // Inicializar el reconocimiento de voz
@@ -635,8 +705,13 @@ class _IdentificacionRClasesState extends State<IdentificacionRClases>
                                         speechToText.stop();
                                         // Verificar si el texto reconocido coincide con el texto esperado
                                         if (text == valor.toLowerCase()) {
-                                          // Realizar la acción correspondiente (en este caso, llamar al método logInR())
-                                          logInR();
+                                          setState(() {
+                                            botonId = texts.botonM4;
+                                          });
+                                        } else {
+                                          setState(() {
+                                            botonId = texts.botonM3;
+                                          });
                                         }
                                       },
                                       child: CircleAvatar(
@@ -657,17 +732,44 @@ class _IdentificacionRClasesState extends State<IdentificacionRClases>
                             const SizedBox(
                               height: 10,
                             ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 25.0),
-                              child: Center(
-                                child: Text(
-                                  texts.voz2,
-                                  style: const TextStyle(
-                                      fontSize: 15, color: Colors.white),
-                                  textAlign: TextAlign.center,
-                                ),
+                            Center(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  InkWell(
+                                    onTap: () {
+                                      // Verificar si el texto reconocido coincide con el texto esperado
+                                      if (text == valor.toLowerCase()) {
+                                        // Realizar la acción correspondiente (en este caso, llamar al método logInR())
+                                        logInR();
+                                      }
+                                    },
+                                    child: Container(
+                                      width: 200,
+                                      height: 50,
+                                      padding: const EdgeInsets.all(15.0),
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          botonId,
+                                          style: const TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 17,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
+                            ),
+                            const SizedBox(
+                              height: 20,
                             ),
                           ],
                         ),
@@ -826,6 +928,9 @@ class _IdentificacionRClasesState extends State<IdentificacionRClases>
                                           child: GestureDetector(
                                             // Configurar un gesto de toque hacia abajo (onTapDown)
                                             onTapDown: (details) async {
+                                              setState(() {
+                                                botonId = texts.botonM2;
+                                              });
                                               // Verificar si el reconocimiento de voz no está en curso
                                               if (!isListening) {
                                                 // Inicializar el reconocimiento de voz
@@ -857,8 +962,13 @@ class _IdentificacionRClasesState extends State<IdentificacionRClases>
                                               speechToText.stop();
                                               // Verificar si el texto reconocido coincide con el texto esperado
                                               if (text == valor.toLowerCase()) {
-                                                // Realizar la acción correspondiente (en este caso, llamar al método logInR())
-                                                logInR();
+                                                setState(() {
+                                                  botonId = texts.botonM4;
+                                                });
+                                              } else {
+                                                setState(() {
+                                                  botonId = texts.botonM3;
+                                                });
                                               }
                                             },
                                             child: CircleAvatar(
@@ -878,16 +988,38 @@ class _IdentificacionRClasesState extends State<IdentificacionRClases>
                                     const SizedBox(
                                       height: 10,
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 25.0),
-                                      child: Center(
-                                        child: Text(
-                                          texts.voz2,
-                                          style: const TextStyle(
-                                              fontSize: 15,
-                                              color: Colors.white),
-                                          textAlign: TextAlign.center,
+                                    Center(
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 0),
+                                        child: InkWell(
+                                          onTap: () {
+                                            // Verificar si el texto reconocido coincide con el texto esperado
+                                            if (text == valor.toLowerCase()) {
+                                              // Realizar la acción correspondiente (en este caso, llamar al método logInR())
+                                              logInR();
+                                            }
+                                          },
+                                          child: Container(
+                                            width: 180,
+                                            padding: const EdgeInsets.all(15.0),
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                botonId,
+                                                style: const TextStyle(
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 20,
+                                                ),
+                                                textAlign: TextAlign.center,
+                                              ),
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -1007,6 +1139,9 @@ class _IdentificacionRClasesState extends State<IdentificacionRClases>
                                     child: GestureDetector(
                                       // Configurar un gesto de toque hacia abajo (onTapDown)
                                       onTapDown: (details) async {
+                                        setState(() {
+                                          botonId = texts.botonM2;
+                                        });
                                         // Verificar si el reconocimiento de voz no está en curso
                                         if (!isListening) {
                                           // Inicializar el reconocimiento de voz
@@ -1036,8 +1171,13 @@ class _IdentificacionRClasesState extends State<IdentificacionRClases>
                                         speechToText.stop();
                                         // Verificar si el texto reconocido coincide con el texto esperado
                                         if (text == valor.toLowerCase()) {
-                                          // Realizar la acción correspondiente (en este caso, llamar al método logInR())
-                                          logInR();
+                                          setState(() {
+                                            botonId = texts.botonM4;
+                                          });
+                                        } else {
+                                          setState(() {
+                                            botonId = texts.botonM3;
+                                          });
                                         }
                                       },
                                       child: CircleAvatar(
@@ -1058,17 +1198,44 @@ class _IdentificacionRClasesState extends State<IdentificacionRClases>
                             const SizedBox(
                               height: 10,
                             ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 25.0),
-                              child: Center(
-                                child: Text(
-                                  texts.voz2,
-                                  style: const TextStyle(
-                                      fontSize: 15, color: Colors.white),
-                                  textAlign: TextAlign.center,
-                                ),
+                            Center(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  InkWell(
+                                    onTap: () {
+                                      // Verificar si el texto reconocido coincide con el texto esperado
+                                      if (text == valor.toLowerCase()) {
+                                        // Realizar la acción correspondiente (en este caso, llamar al método logInR())
+                                        logInR();
+                                      }
+                                    },
+                                    child: Container(
+                                      width: 200,
+                                      height: 50,
+                                      padding: const EdgeInsets.all(15.0),
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          botonId,
+                                          style: const TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 17,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
+                            ),
+                            const SizedBox(
+                              height: 20,
                             ),
                           ],
                         ),

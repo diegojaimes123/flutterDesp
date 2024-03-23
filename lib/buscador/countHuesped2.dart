@@ -36,6 +36,10 @@ class _CountHuesped2State extends State<CountHuesped2> {
 
   OverlayEntry? entry;
 
+  TextEditingController overlayVisible = TextEditingController(
+      text:
+          "false"); // Variable de estado para controlar si la ventana emergente está visible
+
   @override
   void initState() {
     super.initState();
@@ -72,15 +76,10 @@ class _CountHuesped2State extends State<CountHuesped2> {
                     // Llama a setState aquí para que se actualice el UI
                     setState(() {});
                   },
+                  overlayVisible: overlayVisible,
                 ))));
 
     overlay.insert(entry!);
-  }
-
-  // cerrar desplegable del conteo de huespedes
-  void hideOverlay() {
-    entry?.remove();
-    entry = null;
   }
 
   @override
@@ -89,10 +88,12 @@ class _CountHuesped2State extends State<CountHuesped2> {
         // botón para abrir y cerrar el desplegable del conteo de los huespedes
         child: InkWell(
           onTap: () {
-            showOverlay();
-          },
-          onDoubleTap: () {
-            hideOverlay();
+            if (overlayVisible.text == "false") {
+              // Verificar si la ventana emergente no está visible
+              showOverlay();
+              overlayVisible.text =
+                  "true"; // Marcar la ventana emergente como visible
+            }
           },
           child: Container(
             padding: const EdgeInsets.only(

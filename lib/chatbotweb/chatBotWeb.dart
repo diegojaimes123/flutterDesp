@@ -87,7 +87,7 @@ class _ChatBotWebState extends State<ChatBotWeb> {
                         minLines: 1,
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: texts.chat.write,
+                          hintText: texts.chatBotM,
                           contentPadding: const EdgeInsets.all(5),
                           hintStyle: const TextStyle(color: Colors.grey),
                         ),

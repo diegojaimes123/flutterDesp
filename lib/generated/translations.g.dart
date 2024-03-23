@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 1170 (585 per locale)
+/// Strings: 1180 (590 per locale)
 ///
-/// Built on 2024-03-10 at 17:01 UTC
+/// Built on 2024-03-23 at 21:16 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -197,8 +197,13 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get finalizadoE => 'Finalized';
 	String get huella1 => 'Please scan your fingerprint to confirm your reservation';
 	String get huella2 => 'Please scan your fingerprint to access';
-	String get voz1 => 'Please keep the button pressed while speaking. Once you\'ve finished, release it and press it again to log in';
-	String get voz2 => 'Please hold down the button while speaking. Once you\'ve finished speaking, release it and press it again to make the reservation';
+	String get modalExtra => 'Before proceeding with the reservation, we would like to remind you that during the period of dates you have selected, there is already a reservation that takes up a large part of those days. We kindly invite you to choose a different arrival date that is fully available. Thank you for your understanding and cooperation!';
+	String get modalUsuarioAlerta => 'This action cannot be completed because the user has key information within the application!';
+	String get botonM1 => 'Use the microphone';
+	String get botonM2 => 'Analyzing';
+	String get botonM3 => 'Access denied';
+	String get botonM4 => 'Continue';
+	String get chatBotM => 'Write the word StayAway';
 }
 
 // Path: buscador
@@ -1928,8 +1933,13 @@ class _TranslationsEs implements Translations {
 	@override String get finalizadoE => 'Finalizado';
 	@override String get huella1 => 'Por favor, escanee su huella dactilar para confirmar su reserva';
 	@override String get huella2 => 'Por favor, escanee su huella dactilar para acceder';
-	@override String get voz1 => 'Por favor, mantenga presionado el botón mientras habla. Una vez haya terminado de hablar, suéltelo y vuelva a presionarlo para iniciar sesión';
-	@override String get voz2 => 'Por favor, mantenga presionado el botón mientras habla. Una vez haya terminado de hablar, suéltelo y vuelva a presionarlo para realizar la reserva';
+	@override String get modalExtra => 'Antes de proceder con la reserva, nos gustaría recordarte que durante el período de fechas que has seleccionado, ya existe una reserva que ocupa una gran parte de esos días. Te invitamos amablemente a elegir una fecha de llegada diferente que esté totalmente disponible. ¡ ¡Gracias por tu comprensión y cooperación!';
+	@override String get modalUsuarioAlerta => '¡Esta acción no puede completarse porque el usuario tiene información clave dentro de la aplicación!';
+	@override String get botonM1 => 'Utilice el micrófono';
+	@override String get botonM2 => 'Analizando';
+	@override String get botonM3 => 'Acceso denegado';
+	@override String get botonM4 => 'Continuar';
+	@override String get chatBotM => 'Escribe la palabra StayAway';
 }
 
 // Path: buscador
@@ -4175,8 +4185,13 @@ extension on Translations {
 			case 'finalizadoE': return 'Finalized';
 			case 'huella1': return 'Please scan your fingerprint to confirm your reservation';
 			case 'huella2': return 'Please scan your fingerprint to access';
-			case 'voz1': return 'Please keep the button pressed while speaking. Once you\'ve finished, release it and press it again to log in';
-			case 'voz2': return 'Please hold down the button while speaking. Once you\'ve finished speaking, release it and press it again to make the reservation';
+			case 'modalExtra': return 'Before proceeding with the reservation, we would like to remind you that during the period of dates you have selected, there is already a reservation that takes up a large part of those days. We kindly invite you to choose a different arrival date that is fully available. Thank you for your understanding and cooperation!';
+			case 'modalUsuarioAlerta': return 'This action cannot be completed because the user has key information within the application!';
+			case 'botonM1': return 'Use the microphone';
+			case 'botonM2': return 'Analyzing';
+			case 'botonM3': return 'Access denied';
+			case 'botonM4': return 'Continue';
+			case 'chatBotM': return 'Write the word StayAway';
 			default: return null;
 		}
 	}
@@ -4768,8 +4783,13 @@ extension on _TranslationsEs {
 			case 'finalizadoE': return 'Finalizado';
 			case 'huella1': return 'Por favor, escanee su huella dactilar para confirmar su reserva';
 			case 'huella2': return 'Por favor, escanee su huella dactilar para acceder';
-			case 'voz1': return 'Por favor, mantenga presionado el botón mientras habla. Una vez haya terminado de hablar, suéltelo y vuelva a presionarlo para iniciar sesión';
-			case 'voz2': return 'Por favor, mantenga presionado el botón mientras habla. Una vez haya terminado de hablar, suéltelo y vuelva a presionarlo para realizar la reserva';
+			case 'modalExtra': return 'Antes de proceder con la reserva, nos gustaría recordarte que durante el período de fechas que has seleccionado, ya existe una reserva que ocupa una gran parte de esos días. Te invitamos amablemente a elegir una fecha de llegada diferente que esté totalmente disponible. ¡ ¡Gracias por tu comprensión y cooperación!';
+			case 'modalUsuarioAlerta': return '¡Esta acción no puede completarse porque el usuario tiene información clave dentro de la aplicación!';
+			case 'botonM1': return 'Utilice el micrófono';
+			case 'botonM2': return 'Analizando';
+			case 'botonM3': return 'Acceso denegado';
+			case 'botonM4': return 'Continuar';
+			case 'chatBotM': return 'Escribe la palabra StayAway';
 			default: return null;
 		}
 	}
