@@ -244,8 +244,6 @@ class _IdentificacionClasesState extends State<IdentificacionClases>
                                       setState(() {
                                         isListening = false;
                                       });
-                                      // Detener el reconocimiento de voz
-                                      speechToText.stop();
                                       // Verificar si el texto reconocido coincide con el texto esperado
                                       if (text == valor.toLowerCase()) {
                                         setState(() {
@@ -256,6 +254,8 @@ class _IdentificacionClasesState extends State<IdentificacionClases>
                                           botonId = texts.botonM3;
                                         });
                                       }
+                                      // Detener el reconocimiento de voz
+                                      speechToText.stop();
                                     },
                                     child: CircleAvatar(
                                       backgroundColor: Colors.white,
@@ -451,8 +451,6 @@ class _IdentificacionClasesState extends State<IdentificacionClases>
                                       setState(() {
                                         isListening = false;
                                       });
-                                      // Detener el reconocimiento de voz
-                                      speechToText.stop();
                                       // Verificar si el texto reconocido coincide con el texto esperado
                                       if (text == valor.toLowerCase()) {
                                         setState(() {
@@ -463,6 +461,8 @@ class _IdentificacionClasesState extends State<IdentificacionClases>
                                           botonId = texts.botonM3;
                                         });
                                       }
+                                      // Detener el reconocimiento de voz
+                                      speechToText.stop();
                                     },
                                     child: CircleAvatar(
                                       backgroundColor: Colors.white,
@@ -659,8 +659,6 @@ class _IdentificacionClasesState extends State<IdentificacionClases>
                                         setState(() {
                                           isListening = false;
                                         });
-                                        // Detener el reconocimiento de voz
-                                        speechToText.stop();
                                         // Verificar si el texto reconocido coincide con el texto esperado
                                         if (text == valor.toLowerCase()) {
                                           setState(() {
@@ -671,6 +669,8 @@ class _IdentificacionClasesState extends State<IdentificacionClases>
                                             botonId = texts.botonM3;
                                           });
                                         }
+                                        // Detener el reconocimiento de voz
+                                        speechToText.stop();
                                       },
                                       child: CircleAvatar(
                                         backgroundColor: Colors.white,
@@ -916,8 +916,6 @@ class _IdentificacionClasesState extends State<IdentificacionClases>
                                               setState(() {
                                                 isListening = false;
                                               });
-                                              // Detener el reconocimiento de voz
-                                              speechToText.stop();
                                               // Verificar si el texto reconocido coincide con el texto esperado
                                               if (text == valor.toLowerCase()) {
                                                 setState(() {
@@ -928,6 +926,8 @@ class _IdentificacionClasesState extends State<IdentificacionClases>
                                                   botonId = texts.botonM3;
                                                 });
                                               }
+                                              // Detener el reconocimiento de voz
+                                              speechToText.stop();
                                             },
                                             child: CircleAvatar(
                                               backgroundColor: Colors.white,
@@ -1125,8 +1125,6 @@ class _IdentificacionClasesState extends State<IdentificacionClases>
                                         setState(() {
                                           isListening = false;
                                         });
-                                        // Detener el reconocimiento de voz
-                                        speechToText.stop();
                                         // Verificar si el texto reconocido coincide con el texto esperado
                                         if (text == valor.toLowerCase()) {
                                           setState(() {
@@ -1137,6 +1135,8 @@ class _IdentificacionClasesState extends State<IdentificacionClases>
                                             botonId = texts.botonM3;
                                           });
                                         }
+                                        // Detener el reconocimiento de voz
+                                        speechToText.stop();
                                       },
                                       child: CircleAvatar(
                                         backgroundColor: Colors.white,

@@ -237,7 +237,7 @@ class _ConfirmacionPagoState extends State<ConfirmacionPago> {
                   // Codigo qr el cual se puede prestar para integrar un qr completo Bancolombia o Davivienda
                   Center(
                     child: QrImageView(
-                      data: 'Codigo qr',
+                      data: 'https://www.davivienda.com/',
                       version: QrVersions.auto,
                       size: 350.0,
                       foregroundColor: isDark ? primaryColor : Colors.black,
@@ -444,7 +444,7 @@ class _ConfirmacionPagoState extends State<ConfirmacionPago> {
                     // Codigo qr el cual se puede prestar para integrar un qr completo Bancolombia o Davivienda
                     Center(
                       child: QrImageView(
-                        data: 'Codigo qr',
+                        data: 'https://www.davivienda.com/',
                         version: QrVersions.auto,
                         size: 350.0,
                         foregroundColor: isDark ? primaryColor : Colors.black,
