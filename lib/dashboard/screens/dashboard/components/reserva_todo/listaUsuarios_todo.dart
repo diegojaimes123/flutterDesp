@@ -6,8 +6,10 @@ import 'package:proyecto_final/HomePage/home_screens.dart';
 import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_todo/RolUsuario.dart';
 import 'package:proyecto_final/generated/translations.g.dart';
 import 'package:proyecto_final/models/ComentarioModel.dart';
+import 'package:proyecto_final/models/FavoritoModel.dart';
 import 'package:proyecto_final/models/ReservaModel.dart';
 import 'package:proyecto_final/models/SitioModel.dart';
+import 'package:proyecto_final/models/SitioVisitadoModel.dart';
 import 'package:proyecto_final/models/UsuariosModel.dart';
 import 'package:proyecto_final/responsive.dart';
 import 'package:proyecto_final/theme/theme_constants.dart';
@@ -202,91 +204,111 @@ class _ListaUsuarioState extends State<ListaUsuario> {
           child: Text(texts.cosas_faltantes.update),
         )),
         DataCell(FutureBuilder(
-            future: getReservas(),
-            builder: (context, AsyncSnapshot<List<ReservaModel>> reserva) {
+            future: getSitioVisitado(),
+            builder: (context,
+                AsyncSnapshot<List<SitioVisitadoModel>> sitioVisitado) {
               // Mientras carga la información
-              if (reserva.connectionState == ConnectionState.waiting) {
+              if (sitioVisitado.connectionState == ConnectionState.waiting) {
                 return const Center(
                   child: CircularProgressIndicator(),
                 );
               }
               return FutureBuilder(
-                  future: getComentarios(),
-                  builder: (context,
-                      AsyncSnapshot<List<ComentarioModel>> comentario) {
+                  future: getFavorito(),
+                  builder:
+                      (context, AsyncSnapshot<List<FavoritoModel>> favorito) {
                     // Mientras carga la información
-                    if (comentario.connectionState == ConnectionState.waiting) {
+                    if (favorito.connectionState == ConnectionState.waiting) {
                       return const Center(
                         child: CircularProgressIndicator(),
                       );
                     }
                     return FutureBuilder(
-                        future: getSitios(),
-                        builder:
-                            (context, AsyncSnapshot<List<SitioModel>> sitio) {
+                        future: getReservas(),
+                        builder: (context,
+                            AsyncSnapshot<List<ReservaModel>> reserva) {
                           // Mientras carga la información
-                          if (sitio.connectionState ==
+                          if (reserva.connectionState ==
                               ConnectionState.waiting) {
                             return const Center(
                               child: CircularProgressIndicator(),
                             );
                           }
-
-                          return ElevatedButton(
-                            onPressed: () {
-                              bool sitioUsuario = false;
-
-                              bool reservaUsuario = false;
-
-                              bool comentarioUsuario = false;
-
-                              for (var su = 0; su < sitio.data!.length; su++) {
-                                if (sitio.data![su].usuario ==
-                                    usuariosInfo.id) {
-                                  setState(() {
-                                    sitioUsuario = true;
-                                  });
+                          return FutureBuilder(
+                              future: getComentarios(),
+                              builder: (context,
+                                  AsyncSnapshot<List<ComentarioModel>>
+                                      comentario) {
+                                // Mientras carga la información
+                                if (comentario.connectionState ==
+                                    ConnectionState.waiting) {
+                                  return const Center(
+                                    child: CircularProgressIndicator(),
+                                  );
                                 }
-                              }
+                                return FutureBuilder(
+                                    future: getSitios(),
+                                    builder: (context,
+                                        AsyncSnapshot<List<SitioModel>> sitio) {
+                                      // Mientras carga la información
+                                      if (sitio.connectionState ==
+                                          ConnectionState.waiting) {
+                                        return const Center(
+                                          child: CircularProgressIndicator(),
+                                        );
+                                      }
 
-                              for (var cu = 0;
-                                  cu < comentario.data!.length;
-                                  cu++) {
-                                if (comentario.data![cu].usuario ==
-                                    usuariosInfo.id) {
-                                  setState(() {
-                                    comentarioUsuario = true;
-                                  });
-                                }
-                              }
+                                      return ElevatedButton(
+                                        onPressed: () {
+                                          bool sitioUsuario = false;
 
-                              for (var ru = 0;
-                                  ru < reserva.data!.length;
-                                  ru++) {
-                                if (reserva.data![ru].usuario ==
-                                    usuariosInfo.id) {
-                                  setState(() {
-                                    reservaUsuario = true;
-                                  });
-                                }
-                              }
+                                          bool reservaUsuario = false;
 
-                              if (reservaUsuario == false &&
-                                  comentarioUsuario == false &&
-                                  sitioUsuario == false &&
-                                  usuariosInfo.rolAdmin == true) {
-                                // Modal para borrar el usuario
-                                _modalBorrarUsuario(
-                                    context, usuariosInfo, themeManager);
-                              } else {
-                                _modalRestringirUsuario(context);
-                              }
-                            },
-                            style: const ButtonStyle(
-                                backgroundColor:
-                                    MaterialStatePropertyAll(primaryColor)),
-                            child: Text(texts.categories.delete),
-                          );
+                                          for (var su = 0;
+                                              su < sitio.data!.length;
+                                              su++) {
+                                            if (sitio.data![su].usuario ==
+                                                usuariosInfo.id) {
+                                              setState(() {
+                                                sitioUsuario = true;
+                                              });
+                                            }
+                                          }
+
+                                          for (var ru = 0;
+                                              ru < reserva.data!.length;
+                                              ru++) {
+                                            if (reserva.data![ru].usuario ==
+                                                usuariosInfo.id) {
+                                              setState(() {
+                                                reservaUsuario = true;
+                                              });
+                                            }
+                                          }
+
+                                          if (reservaUsuario == false &&
+                                              sitioUsuario == false &&
+                                              usuariosInfo.rolAdmin == false) {
+                                            // Modal para borrar el usuario
+                                            _modalBorrarUsuario(
+                                                context,
+                                                usuariosInfo,
+                                                comentario.data!,
+                                                favorito.data!,
+                                                sitioVisitado.data!,
+                                                themeManager);
+                                          } else {
+                                            _modalRestringirUsuario(context);
+                                          }
+                                        },
+                                        style: const ButtonStyle(
+                                            backgroundColor:
+                                                MaterialStatePropertyAll(
+                                                    primaryColor)),
+                                        child: Text(texts.categories.delete),
+                                      );
+                                    });
+                              });
                         });
                   });
             })),
@@ -669,93 +691,174 @@ class _ListaUsuarioState extends State<ListaUsuario> {
           );
         });
   }
-}
+
+  String botonEU = texts.categories.delete;
 
 // Modal para borrar el usuario
-void _modalBorrarUsuario(
-    BuildContext context, UsuariosModel usuario, ThemeManager themeManager) {
-  showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text(
-            texts.cosas_faltantes.questions.one,
-            textAlign: TextAlign.center,
-          ),
-          content: SizedBox(
-            height: 250,
-            width: 400,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  const SizedBox(
-                    height: defaultPadding,
-                  ),
-                  Center(
-                    child: Text(
-                      texts.cosas_faltantes.questions.summery,
-                      style: const TextStyle(color: Colors.grey),
-                      textAlign: TextAlign.center,
+  void _modalBorrarUsuario(
+      BuildContext context,
+      UsuariosModel usuario,
+      List<ComentarioModel> comentario,
+      List<FavoritoModel> favorito,
+      List<SitioVisitadoModel> sitioVisitado,
+      ThemeManager themeManager) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(
+              texts.cosas_faltantes.questions.one,
+              textAlign: TextAlign.center,
+            ),
+            content: SizedBox(
+              height: 250,
+              width: 400,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: defaultPadding,
                     ),
-                  ),
-                  const SizedBox(
-                    height: defaultPadding,
-                  ),
-                  Image.asset(
-                    "assets/images/logo.png",
-                    width: 150,
-                    height: 150,
-                  )
-                ],
+                    Center(
+                      child: Text(
+                        texts.cosas_faltantes.questions.summery,
+                        style: const TextStyle(color: Colors.grey),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: defaultPadding,
+                    ),
+                    Image.asset(
+                      "assets/images/logo.png",
+                      width: 150,
+                      height: 150,
+                    )
+                  ],
+                ),
               ),
             ),
-          ),
-          actions: [
-            ButtonBar(
-              alignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: Text(texts.categories.cancel)),
-                ElevatedButton(
-                    onPressed: () async {
-                      // Convierte la URL en una referencia de almacenamiento
-                      firabase_storage.Reference storageReference =
-                          firabase_storage.FirebaseStorage.instance
-                              .refFromURL(usuario.foto);
+            actions: [
+              ButtonBar(
+                alignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text(texts.categories.cancel)),
+                  ElevatedButton(
+                      onPressed: () async {
+                        setState(() {
+                          botonEU = texts.From.loading;
+                        });
 
-                      // Borra el archivo
-                      await storageReference.delete();
+                        List<ComentarioModel> comentarioUsuario = [];
 
-                      // Eliminar un usuario mediante una solicitud HTTP DELETE
-                      String url = "";
+                        for (var cu = 0; cu < comentario.length; cu++) {
+                          if (comentario[cu].usuario == usuario.id) {
+                            comentarioUsuario.add(comentario[cu]);
+                          }
+                        }
 
-                      url = "$djangoApi/api/Usuarios/";
+                        if (comentarioUsuario.isNotEmpty) {
+                          // Eliminar un usuario mediante una solicitud HTTP DELETE
+                          String urlC = "";
 
-                      // Realizar la solicitud HTTP DELETE para eliminar el usuario
-                      final response =
-                          await http.delete(Uri.parse("$url${usuario.id}/"));
+                          urlC = "$djangoApi/api/Comentarios/";
 
-                      // Verificar si la eliminación fue exitosa (código de respuesta 204)
-                      if (response.statusCode == 204) {
-                        // Navegar a la pantalla principal después de eliminar el usuario
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => HomeScreenPage(
-                              themeManager: themeManager,
+                          // Realizar la solicitud HTTP DELETE para eliminar el comentarip
+
+                          for (var uc = 0;
+                              uc < comentarioUsuario.length;
+                              uc++) {
+                            await http.delete(
+                                Uri.parse("$urlC${comentarioUsuario[uc].id}/"));
+                          }
+                        }
+
+                        List<FavoritoModel> favoritoUsuario = [];
+
+                        for (var fu = 0; fu < favorito.length; fu++) {
+                          if (favorito[fu].usuario == usuario.id) {
+                            favoritoUsuario.add(favorito[fu]);
+                          }
+                        }
+
+                        if (favoritoUsuario.isNotEmpty) {
+                          // Eliminar un usuario mediante una solicitud HTTP DELETE
+                          String urlF = "";
+
+                          urlF = "$djangoApi/api/Favoritos/";
+
+                          // Realizar la solicitud HTTP DELETE para eliminar el comentarip
+
+                          for (var uf = 0; uf < favoritoUsuario.length; uf++) {
+                            await http.delete(
+                                Uri.parse("$urlF${favoritoUsuario[uf].id}/"));
+                          }
+                        }
+
+                        List<SitioVisitadoModel> sitioVisitadoUsuario = [];
+
+                        for (var vu = 0; vu < sitioVisitado.length; vu++) {
+                          if (sitioVisitado[vu].usuario == usuario.id) {
+                            sitioVisitadoUsuario.add(sitioVisitado[vu]);
+                          }
+                        }
+
+                        if (sitioVisitadoUsuario.isNotEmpty) {
+                          // Eliminar un usuario mediante una solicitud HTTP DELETE
+                          String urlV = "";
+
+                          urlV = "$djangoApi/api/SitioVisitado/";
+
+                          // Realizar la solicitud HTTP DELETE para eliminar el comentarip
+
+                          for (var uv = 0;
+                              uv < sitioVisitadoUsuario.length;
+                              uv++) {
+                            await http.delete(Uri.parse(
+                                "$urlV${sitioVisitadoUsuario[uv].id}/"));
+                          }
+                        }
+
+                        // Convierte la URL en una referencia de almacenamiento
+                        firabase_storage.Reference storageReference =
+                            firabase_storage.FirebaseStorage.instance
+                                .refFromURL(usuario.foto);
+
+                        // Borra el archivo
+                        await storageReference.delete();
+
+                        // Eliminar un usuario mediante una solicitud HTTP DELETE
+                        String url = "";
+
+                        url = "$djangoApi/api/Usuarios/";
+
+                        // Realizar la solicitud HTTP DELETE para eliminar el usuario
+                        final response =
+                            await http.delete(Uri.parse("$url${usuario.id}/"));
+
+                        // Verificar si la eliminación fue exitosa (código de respuesta 204)
+                        if (response.statusCode == 204) {
+                          // Navegar a la pantalla principal después de eliminar el usuario
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => HomeScreenPage(
+                                themeManager: themeManager,
+                              ),
                             ),
-                          ),
-                        );
-                      }
-                    },
-                    child: Text(texts.categories.delete)),
-              ],
-            ),
-          ],
-        );
-      });
+                          );
+                        }
+                      },
+                      child: Text(botonEU)),
+                ],
+              ),
+            ],
+          );
+        });
+  }
 }
 
 // Modal para restringir la eliminación del usuario

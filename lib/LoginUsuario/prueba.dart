@@ -540,7 +540,7 @@ class _Prueba3State extends State<Prueba3> {
   TextEditingController tipoBanco = TextEditingController();
   TextEditingController cuentaBancaria = TextEditingController();
   TextEditingController numeroDaviplata = TextEditingController();
-  String? selectedBank;
+
   // Mascara para el número de telefono
   var inputtelefono = MaskTextInputFormatter(
       mask: "### ### ####", filter: {"#": RegExp(r'[0-9]')});
@@ -628,17 +628,13 @@ class _Prueba3State extends State<Prueba3> {
                           ),
                         ))
                     .toList(),
-                value: selectedBank,
+                value: selectedValue,
                 onChanged: (String? value) {
                   // Actualización del valor seleccionado
                   setState(() {
-                    selectedBank = value;
+                    selectedValue = value;
                     tipoBanco.text = selectedValue!;
                   });
-
-                  if (selectedValue == null || selectedValue!.isEmpty) {
-                    return;
-                  }
                 },
                 buttonStyleData: ButtonStyleData(
                   height: 50,
@@ -710,17 +706,8 @@ class _Prueba3State extends State<Prueba3> {
                     hintStyle: const TextStyle(color: Colors.black),
                     fillColor: Colors.grey[200],
                     filled: true,
-                    
                   ),
-                  validator: (String? value) {
-                    // Validar campo
-                    if (value == null || value.isEmpty) {
-                      return texts.pantallaTres.se_requiere_de_este_campo;
-                    }
-                    return null;
-                  },
                 ),
-                
               ),
             ),
           ),
@@ -756,14 +743,6 @@ class _Prueba3State extends State<Prueba3> {
                     fillColor: Colors.grey[200],
                     filled: true,
                   ),
-                  validator: (String? value) {
-                    // Validar campo
-                    if (value == null || value.isEmpty) {
-                      return texts.pantallaTres.se_requiere_de_este_campo;
-                    }
-                    return null;
-                  },
-                  
                 ),
               ),
             ),
