@@ -48,7 +48,7 @@ class Sitios extends StatelessWidget {
                       child: CircularProgressIndicator(),
                     );
                   }
-
+            
                   return FutureBuilder(
                       future: getSitios(), // traer todos los sitios
                       builder:
@@ -59,24 +59,22 @@ class Sitios extends StatelessWidget {
                             child: CircularProgressIndicator(),
                           );
                         }
-
+            
                         // Verifica si la información es nula
                         if (sitio.data != null) {
-                          return SingleChildScrollView(
-                            child: ListView.builder(
-                                scrollDirection: Axis.vertical,
-                                itemCount: sitio.data!.length,
-                                shrinkWrap: true,
-                                itemBuilder: (context, index) {
-                                  // Llama a la carta con la información del sitio
-                                  return SitioCard(
-                                    sitio: sitio.data![index],
-                                    favorito: false,
-                                    usuario: usuario.data!,
-                                    themeManager: themeManager,
-                                  );
-                                }),
-                          );
+                          return ListView.builder(
+                              scrollDirection: Axis.vertical,
+                              itemCount: sitio.data!.length,
+                              shrinkWrap: true,
+                              itemBuilder: (context, index) {
+                                // Llama a la carta con la información del sitio
+                                return SitioCard(
+                                  sitio: sitio.data![index],
+                                  favorito: false,
+                                  usuario: usuario.data!,
+                                  themeManager: themeManager,
+                                );
+                              });
                         } else {
                           return const CircularProgressIndicator();
                         }
