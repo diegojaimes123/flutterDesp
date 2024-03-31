@@ -64,8 +64,7 @@ class MisSitios extends StatelessWidget {
 
                         // Verifica si la información es nula
                         if (sitio.data != null) {
-                          return SingleChildScrollView(
-                            child: ListView(
+                          return ListView(
                               scrollDirection: Axis.vertical,
                               shrinkWrap: true,
                               children: [
@@ -90,8 +89,7 @@ class MisSitios extends StatelessWidget {
                                           themeManager: themeManager,
                                         ),
                               ],
-                            ),
-                          );
+                            );
                         } else {
                           return const CircularProgressIndicator();
                         }

@@ -32,7 +32,7 @@ class _MainScreenTodoState extends State<MainScreenTodo> {
       /// Init Alan Button with project key from Alan AI Studio
       /// Inicializar el botón de Alan AI Studio
       AlanVoice.addButton(
-          "257726fb1e303ccaf96867d4b3de54d42e956eca572e1d8b807a3e2338fdd0dc/stage",
+          "4e45d7758fd4547494e94c51858645f62e956eca572e1d8b807a3e2338fdd0dc/stage",
           buttonAlign: AlanVoice.BUTTON_ALIGN_RIGHT);
 
       /// Handle commands from Alan AI Studio
