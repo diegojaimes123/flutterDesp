@@ -234,26 +234,38 @@ class _ComentarioCardState extends State<ComentarioCard> {
                                           ),
                                         ),
                                         const SizedBox(height: defaultPadding),
-                                        FutureBuilder<String>(
-                                          future: traduccionVariables(context,
-                                              widget.comentario.desLimpieza),
-                                          builder: (context, snapshot) {
-                                            if (snapshot.connectionState ==
-                                                ConnectionState.waiting) {
-                                              return const CircularProgressIndicator();
-                                            } else if (snapshot.hasError) {
-                                              return Text(
-                                                  'Error: ${snapshot.error}');
-                                            } else {
-                                              return Text(
-                                                snapshot.data!,
-                                                style: const TextStyle(
+                                        widget.comentario.desLimpieza == ""
+                                            ? const Text(
+                                                "",
+                                                style: TextStyle(
                                                     color: Colors.grey),
                                                 textAlign: TextAlign.center,
-                                              );
-                                            }
-                                          },
-                                        ),
+                                              )
+                                            : FutureBuilder<String>(
+                                                future: traduccionVariables(
+                                                    context,
+                                                    widget.comentario
+                                                        .desLimpieza),
+                                                builder: (context, snapshot) {
+                                                  if (snapshot
+                                                          .connectionState ==
+                                                      ConnectionState.waiting) {
+                                                    return const CircularProgressIndicator();
+                                                  } else if (snapshot
+                                                      .hasError) {
+                                                    return Text(
+                                                        'Error: ${snapshot.error}');
+                                                  } else {
+                                                    return Text(
+                                                      snapshot.data!,
+                                                      style: const TextStyle(
+                                                          color: Colors.grey),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                    );
+                                                  }
+                                                },
+                                              ),
                                         const SizedBox(height: defaultPadding),
                                         Text(
                                           texts.comments.communication,
@@ -289,28 +301,38 @@ class _ComentarioCardState extends State<ComentarioCard> {
                                           ),
                                         ),
                                         const SizedBox(height: defaultPadding),
-                                        FutureBuilder<String>(
-                                          future: traduccionVariables(
-                                              context,
-                                              widget
-                                                  .comentario.desComunicacion),
-                                          builder: (context, snapshot) {
-                                            if (snapshot.connectionState ==
-                                                ConnectionState.waiting) {
-                                              return const CircularProgressIndicator();
-                                            } else if (snapshot.hasError) {
-                                              return Text(
-                                                  'Error: ${snapshot.error}');
-                                            } else {
-                                              return Text(
-                                                snapshot.data!,
-                                                style: const TextStyle(
+                                        widget.comentario.desComunicacion == ""
+                                            ? const Text(
+                                                "",
+                                                style: TextStyle(
                                                     color: Colors.grey),
                                                 textAlign: TextAlign.center,
-                                              );
-                                            }
-                                          },
-                                        ),
+                                              )
+                                            : FutureBuilder<String>(
+                                                future: traduccionVariables(
+                                                    context,
+                                                    widget.comentario
+                                                        .desComunicacion),
+                                                builder: (context, snapshot) {
+                                                  if (snapshot
+                                                          .connectionState ==
+                                                      ConnectionState.waiting) {
+                                                    return const CircularProgressIndicator();
+                                                  } else if (snapshot
+                                                      .hasError) {
+                                                    return Text(
+                                                        'Error: ${snapshot.error}');
+                                                  } else {
+                                                    return Text(
+                                                      snapshot.data!,
+                                                      style: const TextStyle(
+                                                          color: Colors.grey),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                    );
+                                                  }
+                                                },
+                                              ),
                                         const SizedBox(height: defaultPadding),
                                         Text(
                                           texts.comments.arrival,
@@ -346,26 +368,38 @@ class _ComentarioCardState extends State<ComentarioCard> {
                                           ),
                                         ),
                                         const SizedBox(height: defaultPadding),
-                                        FutureBuilder<String>(
-                                          future: traduccionVariables(context,
-                                              widget.comentario.desLlegada),
-                                          builder: (context, snapshot) {
-                                            if (snapshot.connectionState ==
-                                                ConnectionState.waiting) {
-                                              return const CircularProgressIndicator();
-                                            } else if (snapshot.hasError) {
-                                              return Text(
-                                                  'Error: ${snapshot.error}');
-                                            } else {
-                                              return Text(
-                                                snapshot.data!,
-                                                style: const TextStyle(
+                                        widget.comentario.desLlegada == ""
+                                            ? const Text(
+                                                "",
+                                                style: TextStyle(
                                                     color: Colors.grey),
                                                 textAlign: TextAlign.center,
-                                              );
-                                            }
-                                          },
-                                        ),
+                                              )
+                                            : FutureBuilder<String>(
+                                                future: traduccionVariables(
+                                                    context,
+                                                    widget
+                                                        .comentario.desLlegada),
+                                                builder: (context, snapshot) {
+                                                  if (snapshot
+                                                          .connectionState ==
+                                                      ConnectionState.waiting) {
+                                                    return const CircularProgressIndicator();
+                                                  } else if (snapshot
+                                                      .hasError) {
+                                                    return Text(
+                                                        'Error: ${snapshot.error}');
+                                                  } else {
+                                                    return Text(
+                                                      snapshot.data!,
+                                                      style: const TextStyle(
+                                                          color: Colors.grey),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                    );
+                                                  }
+                                                },
+                                              ),
                                         const SizedBox(height: defaultPadding),
                                         Text(
                                           texts.comments.reliability,
@@ -401,26 +435,38 @@ class _ComentarioCardState extends State<ComentarioCard> {
                                           ),
                                         ),
                                         const SizedBox(height: defaultPadding),
-                                        FutureBuilder<String>(
-                                          future: traduccionVariables(context,
-                                              widget.comentario.desFiabilidad),
-                                          builder: (context, snapshot) {
-                                            if (snapshot.connectionState ==
-                                                ConnectionState.waiting) {
-                                              return const CircularProgressIndicator();
-                                            } else if (snapshot.hasError) {
-                                              return Text(
-                                                  'Error: ${snapshot.error}');
-                                            } else {
-                                              return Text(
-                                                snapshot.data!,
-                                                style: const TextStyle(
+                                        widget.comentario.desFiabilidad == ""
+                                            ? const Text(
+                                                "",
+                                                style: TextStyle(
                                                     color: Colors.grey),
                                                 textAlign: TextAlign.center,
-                                              );
-                                            }
-                                          },
-                                        ),
+                                              )
+                                            : FutureBuilder<String>(
+                                                future: traduccionVariables(
+                                                    context,
+                                                    widget.comentario
+                                                        .desFiabilidad),
+                                                builder: (context, snapshot) {
+                                                  if (snapshot
+                                                          .connectionState ==
+                                                      ConnectionState.waiting) {
+                                                    return const CircularProgressIndicator();
+                                                  } else if (snapshot
+                                                      .hasError) {
+                                                    return Text(
+                                                        'Error: ${snapshot.error}');
+                                                  } else {
+                                                    return Text(
+                                                      snapshot.data!,
+                                                      style: const TextStyle(
+                                                          color: Colors.grey),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                    );
+                                                  }
+                                                },
+                                              ),
                                         const SizedBox(height: defaultPadding),
                                         Text(
                                           texts.comments.location,
@@ -456,26 +502,38 @@ class _ComentarioCardState extends State<ComentarioCard> {
                                           ),
                                         ),
                                         const SizedBox(height: defaultPadding),
-                                        FutureBuilder<String>(
-                                          future: traduccionVariables(context,
-                                              widget.comentario.desUbicacion),
-                                          builder: (context, snapshot) {
-                                            if (snapshot.connectionState ==
-                                                ConnectionState.waiting) {
-                                              return const CircularProgressIndicator();
-                                            } else if (snapshot.hasError) {
-                                              return Text(
-                                                  'Error: ${snapshot.error}');
-                                            } else {
-                                              return Text(
-                                                snapshot.data!,
-                                                style: const TextStyle(
+                                        widget.comentario.desUbicacion == ""
+                                            ? const Text(
+                                                "",
+                                                style: TextStyle(
                                                     color: Colors.grey),
                                                 textAlign: TextAlign.center,
-                                              );
-                                            }
-                                          },
-                                        ),
+                                              )
+                                            : FutureBuilder<String>(
+                                                future: traduccionVariables(
+                                                    context,
+                                                    widget.comentario
+                                                        .desUbicacion),
+                                                builder: (context, snapshot) {
+                                                  if (snapshot
+                                                          .connectionState ==
+                                                      ConnectionState.waiting) {
+                                                    return const CircularProgressIndicator();
+                                                  } else if (snapshot
+                                                      .hasError) {
+                                                    return Text(
+                                                        'Error: ${snapshot.error}');
+                                                  } else {
+                                                    return Text(
+                                                      snapshot.data!,
+                                                      style: const TextStyle(
+                                                          color: Colors.grey),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                    );
+                                                  }
+                                                },
+                                              ),
                                         const SizedBox(height: defaultPadding),
                                         Text(
                                           texts.comments.price,
@@ -511,26 +569,38 @@ class _ComentarioCardState extends State<ComentarioCard> {
                                           ),
                                         ),
                                         const SizedBox(height: defaultPadding),
-                                        FutureBuilder<String>(
-                                          future: traduccionVariables(context,
-                                              widget.comentario.desPrecio),
-                                          builder: (context, snapshot) {
-                                            if (snapshot.connectionState ==
-                                                ConnectionState.waiting) {
-                                              return const CircularProgressIndicator();
-                                            } else if (snapshot.hasError) {
-                                              return Text(
-                                                  'Error: ${snapshot.error}');
-                                            } else {
-                                              return Text(
-                                                snapshot.data!,
-                                                style: const TextStyle(
+                                        widget.comentario.desPrecio == ""
+                                            ? const Text(
+                                                "",
+                                                style: TextStyle(
                                                     color: Colors.grey),
                                                 textAlign: TextAlign.center,
-                                              );
-                                            }
-                                          },
-                                        ),
+                                              )
+                                            : FutureBuilder<String>(
+                                                future: traduccionVariables(
+                                                    context,
+                                                    widget
+                                                        .comentario.desPrecio),
+                                                builder: (context, snapshot) {
+                                                  if (snapshot
+                                                          .connectionState ==
+                                                      ConnectionState.waiting) {
+                                                    return const CircularProgressIndicator();
+                                                  } else if (snapshot
+                                                      .hasError) {
+                                                    return Text(
+                                                        'Error: ${snapshot.error}');
+                                                  } else {
+                                                    return Text(
+                                                      snapshot.data!,
+                                                      style: const TextStyle(
+                                                          color: Colors.grey),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                    );
+                                                  }
+                                                },
+                                              ),
                                         const SizedBox(height: defaultPadding),
                                         Text(
                                           texts.comments.comment,

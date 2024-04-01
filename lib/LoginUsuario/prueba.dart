@@ -230,12 +230,6 @@ class _PruebaState extends State<Prueba> {
                         filled: true,
                       ),
                       keyboardType: TextInputType.text,
-                      validator: (String? value) {
-                        if (value == null || value.isEmpty) {
-                          return texts.pantallaTres.se_requiere_de_este_campo;
-                        }
-                        return null;
-                      },
                     ),
                   ),
                 ),

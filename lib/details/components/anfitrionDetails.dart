@@ -330,23 +330,29 @@ class _AnfitrionDetailsState extends State<AnfitrionDetails> {
                           const SizedBox(
                             height: defaultPadding,
                           ),
-                          FutureBuilder<String>(
-                            future: traduccionVariables(
-                                context, usuario.descripcion),
-                            builder: (context, snapshot) {
-                              if (snapshot.connectionState ==
-                                  ConnectionState.waiting) {
-                                return const CircularProgressIndicator();
-                              } else if (snapshot.hasError) {
-                                return Text('Error: ${snapshot.error}');
-                              } else {
-                                return Text(
-                                  snapshot.data!,
-                                  style: const TextStyle(color: Colors.grey),
-                                );
-                              }
-                            },
-                          ),
+                          usuario.descripcion == ""
+                              ? const Text(
+                                  "",
+                                  style: TextStyle(color: Colors.grey),
+                                )
+                              : FutureBuilder<String>(
+                                  future: traduccionVariables(
+                                      context, usuario.descripcion),
+                                  builder: (context, snapshot) {
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.waiting) {
+                                      return const CircularProgressIndicator();
+                                    } else if (snapshot.hasError) {
+                                      return Text('Error: ${snapshot.error}');
+                                    } else {
+                                      return Text(
+                                        snapshot.data!,
+                                        style:
+                                            const TextStyle(color: Colors.grey),
+                                      );
+                                    }
+                                  },
+                                ),
                           const SizedBox(
                             height: defaultPadding,
                           ),
