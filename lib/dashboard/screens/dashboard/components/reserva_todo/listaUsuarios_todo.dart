@@ -823,13 +823,15 @@ class _ListaUsuarioState extends State<ListaUsuario> {
                           }
                         }
 
-                        // Convierte la URL en una referencia de almacenamiento
-                        firabase_storage.Reference storageReference =
-                            firabase_storage.FirebaseStorage.instance
-                                .refFromURL(usuario.foto);
+                        if (usuario.foto != "") {
+                          // Convierte la URL en una referencia de almacenamiento
+                          firabase_storage.Reference storageReference =
+                              firabase_storage.FirebaseStorage.instance
+                                  .refFromURL(usuario.foto);
 
-                        // Borra el archivo
-                        await storageReference.delete();
+                          // Borra el archivo
+                          await storageReference.delete();
+                        }
 
                         // Eliminar un usuario mediante una solicitud HTTP DELETE
                         String url = "";
