@@ -378,6 +378,16 @@ class _StepWidgetState extends State<StepWidget> {
                                         child: TableCalendar(
                                           locale: 'en_US',
                                           rowHeight: 30,
+                                          daysOfWeekStyle:
+                                              const DaysOfWeekStyle(
+                                            weekdayStyle: TextStyle(
+                                                color:
+                                                    primaryColor), // Cambia el color del texto de los días de la semana
+                                            weekendStyle: TextStyle(
+                                              color: Color.fromARGB(
+                                                  255, 183, 135, 0),
+                                            ),
+                                          ),
                                           calendarStyle: const CalendarStyle(
                                             rangeHighlightColor: primaryColor,
                                             todayDecoration: BoxDecoration(
@@ -428,6 +438,16 @@ class _StepWidgetState extends State<StepWidget> {
                                         child: TableCalendar(
                                           locale: 'en_US',
                                           rowHeight: 43,
+                                          daysOfWeekStyle:
+                                              const DaysOfWeekStyle(
+                                            weekdayStyle: TextStyle(
+                                                color:
+                                                    primaryColor), // Cambia el color del texto de los días de la semana
+                                            weekendStyle: TextStyle(
+                                              color: Color.fromARGB(
+                                                  255, 183, 135, 0),
+                                            ),
+                                          ),
                                           calendarStyle: const CalendarStyle(
                                             rangeHighlightColor: primaryColor,
                                             todayDecoration: BoxDecoration(
@@ -494,6 +514,14 @@ class _StepWidgetState extends State<StepWidget> {
                             child: TableCalendar(
                               locale: 'en_US',
                               rowHeight: 43,
+                              daysOfWeekStyle: const DaysOfWeekStyle(
+                                weekdayStyle: TextStyle(
+                                    color:
+                                        primaryColor), // Cambia el color del texto de los días de la semana
+                                weekendStyle: TextStyle(
+                                  color: Color.fromARGB(255, 183, 135, 0),
+                                ),
+                              ),
                               calendarStyle: const CalendarStyle(
                                 rangeHighlightColor: primaryColor,
                                 todayDecoration: BoxDecoration(
@@ -541,6 +569,14 @@ class _StepWidgetState extends State<StepWidget> {
                             child: TableCalendar(
                               locale: 'en_US',
                               rowHeight: 43,
+                              daysOfWeekStyle: const DaysOfWeekStyle(
+                                weekdayStyle: TextStyle(
+                                    color:
+                                        primaryColor), // Cambia el color del texto de los días de la semana
+                                weekendStyle: TextStyle(
+                                  color: Color.fromARGB(255, 183, 135, 0),
+                                ),
+                              ),
                               calendarStyle: const CalendarStyle(
                                 rangeHighlightColor: primaryColor,
                                 todayDecoration: BoxDecoration(
@@ -852,7 +888,7 @@ class _StepWidgetState extends State<StepWidget> {
                   );
                 } else {
                   // Mostrar un indicador de carga si no hay datos disponibles
-                 return const Center(
+                  return const Center(
                     child: Column(
                       children: [
                         Text(
